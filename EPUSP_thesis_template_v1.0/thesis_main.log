@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2015.12.10)  9 DEC 2016 12:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/TeX Live for SUSE Linux) (format=pdflatex 2017.1.16)  7 FEB 2017 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -340,6 +340,10 @@ File: babel.def 2013/05/16 v3.9f Babel common definitions
 \ABCIauxlen=\skip57
 \c@ABCIaux=\count123
 \c@ABCImax=\count124
+
+(/usr/share/texmf/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
 \biblabelsep=\skip58
 LaTeX Info: Redefining \newblock on input line 646.
 LaTeX Info: Redefining \cite on input line 673.
@@ -556,17 +560,6 @@ File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \Gin@req@height=\dimen148
 \Gin@req@width=\dimen149
 )
-(/usr/share/texmf/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip65
-\f@ncyO@elh=\skip66
-\f@ncyO@erh=\skip67
-\f@ncyO@olh=\skip68
-\f@ncyO@orh=\skip69
-\f@ncyO@elf=\skip70
-\f@ncyO@erf=\skip71
-\f@ncyO@olf=\skip72
-\f@ncyO@orf=\skip73
-)
 (/usr/share/texmf/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2012/08/31 v0.4t Insert pages of external PDF documents (AM)
 
@@ -597,6 +590,17 @@ File: pppdftex.def 2012/08/31 v0.4t Pdfpages driver for pdfTeX (AM)
 \AM@toc@title=\toks34
 \c@AM@survey=\count145
 \AM@templatesizebox=\box61
+)
+(/usr/share/texmf/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip65
+\f@ncyO@elh=\skip66
+\f@ncyO@erh=\skip67
+\f@ncyO@olh=\skip68
+\f@ncyO@orh=\skip69
+\f@ncyO@elf=\skip70
+\f@ncyO@erf=\skip71
+\f@ncyO@olf=\skip72
+\f@ncyO@orf=\skip73
 ) (./thesis_main.aux
 (./doc/acknowledgement.aux) (./doc/abstract.aux) (./doc/abbreviations.aux)
 (./doc/symbols.aux) (./doc/introduction.aux) (./doc/literature.aux)
@@ -604,50 +608,50 @@ File: pppdftex.def 2012/08/31 v0.4t Pdfpages driver for pdfTeX (AM)
 (./doc/conclusion.aux) (./doc/appA.aux))
 \openout1 = `thesis_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 89.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 89.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 81.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 81.
 
 
 (/usr/share/texmf/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 89.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 89.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 81.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 81.
 
 
 (/usr/share/texmf/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 89.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 89.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 81.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 81.
 
 
 (/usr/share/texmf/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 89.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 89.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 81.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 81.
 
 (/usr/share/texmf/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 89.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 81.
 
 (/usr/share/texmf/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 \AtBeginShipoutBox=\box62
-Package hyperref Info: Link coloring ON on input line 89.
+Package hyperref Info: Link coloring ON on input line 81.
 
 (/usr/share/texmf/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -657,9 +661,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count146
 )
-LaTeX Info: Redefining \ref on input line 89.
-LaTeX Info: Redefining \pageref on input line 89.
-LaTeX Info: Redefining \nameref on input line 89.
+LaTeX Info: Redefining \ref on input line 81.
+LaTeX Info: Redefining \pageref on input line 81.
+LaTeX Info: Redefining \nameref on input line 81.
  (./thesis_main.out) (./thesis_main.out)
 \@outlinefile=\write3
 \openout3 = `thesis_main.out'.
@@ -692,53 +696,53 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 108.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 108.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 100.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 100.
 
 
 (/usr/share/texmf/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 108.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 100.
 
 
 (/usr/share/texmf/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 108.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 100.
 
 
 (/usr/share/texmf/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 108.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 100.
 
 
 (/usr/share/texmf/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 108.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 100.
 
 
 (/usr/share/texmf/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 108.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 100.
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--108
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
 
  []
 
 [1
 
 {/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
 
  []
 
@@ -746,7 +750,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.110 	\folhaderosto
+l.102 	\folhaderosto
                     {} [2
 
 
@@ -756,47 +760,47 @@ t>
 File: figures/EPUSP-Catalogacao-na-Fonte.pdf Graphic file (type pdf)
  <use figures/EPUSP-Catalogacao-na-Fonte.pdf, page 1>
 Package pdftex.def Info: figures/EPUSP-Catalogacao-na-Fonte.pdf, page1 used on 
-input line 112.
+input line 104.
 (pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
 File: figures/EPUSP-Catalogacao-na-Fonte.pdf Graphic file (type pdf)
 
 <use figures/EPUSP-Catalogacao-na-Fonte.pdf, page 1>
 Package pdftex.def Info: figures/EPUSP-Catalogacao-na-Fonte.pdf, page1 used on 
-input line 112.
+input line 104.
 (pdftex.def)             Requested size: 597.53821pt x 845.08372pt.
 File: figures/EPUSP-Catalogacao-na-Fonte.pdf Graphic file (type pdf)
 
 <use figures/EPUSP-Catalogacao-na-Fonte.pdf, page 1>
 Package pdftex.def Info: figures/EPUSP-Catalogacao-na-Fonte.pdf, page1 used on 
-input line 112.
+input line 104.
 (pdftex.def)             Requested size: 597.53821pt x 845.08372pt.
 File: figures/EPUSP-Catalogacao-na-Fonte.pdf Graphic file (type pdf)
 
 <use figures/EPUSP-Catalogacao-na-Fonte.pdf, page 1>
 Package pdftex.def Info: figures/EPUSP-Catalogacao-na-Fonte.pdf, page1 used on 
-input line 112.
+input line 104.
 (pdftex.def)             Requested size: 597.53821pt x 845.08372pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.112 ...={1}]{figures/EPUSP-Catalogacao-na-Fonte}
+l.104 ...={1}]{figures/EPUSP-Catalogacao-na-Fonte}
                                                   
 File: figures/EPUSP-Catalogacao-na-Fonte.pdf Graphic file (type pdf)
 
 <use figures/EPUSP-Catalogacao-na-Fonte.pdf, page 1>
 Package pdftex.def Info: figures/EPUSP-Catalogacao-na-Fonte.pdf, page1 used on 
-input line 112.
+input line 104.
 (pdftex.def)             Requested size: 597.53821pt x 845.08372pt.
  [3
 
  <./figures/EPUSP-Catalogacao-na-Fonte.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
+Underfull \hbox (badness 10000) in paragraph at lines 110--110
 
  []
 
 
-Overfull \hbox (8.80406pt too wide) in paragraph at lines 118--118
+Overfull \hbox (8.80406pt too wide) in paragraph at lines 110--110
 []  $[]$
  []
 
@@ -856,19 +860,18 @@ Overfull \hbox (8.80406pt too wide) in paragraph at lines 118--118
 
 
 
-] (./thesis_main.toc [9
-
-
-
-])
+] (./thesis_main.toc)
 \tf@toc=\write6
 \openout6 = `thesis_main.toc'.
 
- [10]
+ [9
+
+
+
+]
 \openout2 = `doc/introduction.aux'.
 
-
-(./doc/introduction.tex
+ (./doc/introduction.tex
 Chapter 1.
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
@@ -876,7 +879,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 n the file
  []
 
-) [1
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 10.
+(/usr/share/texmf/tex/latex/txfonts/t1txtt.fd
+File: t1txtt.fd 2000/12/15 v3.1
+)) [1
 
 
 
@@ -897,41 +903,34 @@ Chapter 2.
 
  (./doc/methodology.tex
 Chapter 3.
-[3
+) [3
 
 
 
 
 ]
-LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 80.
- [4]
-
-LaTeX Warning: Reference `app:E' on page 5 undefined on input line 150.
-
-[5] [6] [7] [8] [9] [10] [11]
-
-LaTeX Warning: Reference `chap:pm' on page 12 undefined on input line 471.
-
-[12] [13]) [14]
 \openout2 = `doc/results.aux'.
 
  (./doc/results.tex
 Chapter 4.
-[15
+) [4
 
 
 
 
-] [16] [17]) [18]
+]
 \openout2 = `doc/example.aux'.
 
  (./doc/example.tex
 Chapter 5.
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 39.
-(/usr/share/texmf/tex/latex/txfonts/t1txtt.fd
-File: t1txtt.fd 2000/12/15 v3.1
-) [19
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 11.
+<figures/y_t.pdf, id=128, 361.35pt x 216.81pt>
+File: figures/y_t.pdf Graphic file (type pdf)
+ <use figures/y_t.pdf>
+Package pdftex.def Info: figures/y_t.pdf used on input line 29.
+(pdftex.def)             Requested size: 433.62pt x 260.174pt.
+) [5
 
 
 
@@ -941,312 +940,28 @@ as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.52 
-     ] <figures/ibov.pdf, id=461, 361.35pt x 216.81pt>
-File: figures/ibov.pdf Graphic file (type pdf)
- <use figures/ibov.pdf>
-Package pdftex.def Info: figures/ibov.pdf used on input line 70.
-(pdftex.def)             Requested size: 397.48499pt x 238.49173pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[20]
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 85.
- (/usr/share/texmf/tex/latex/psnfss/omsphv.fd
-File: omsphv.fd 
-)
-LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
- [21pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-1}) has been already used, duplicate ignored
+l.132 	\include{doc/example}
+                            pdfTeX warning (ext4): destination with the same id
+entifier (name{figure.5.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.101 
-       <./figures/ibov.pdf>] <figures/distr.pdf, id=494, 361.35pt x 216.81pt>
-File: figures/distr.pdf Graphic file (type pdf)
-
-<use figures/distr.pdf>
-Package pdftex.def Info: figures/distr.pdf used on input line 107.
-(pdftex.def)             Requested size: 433.62pt x 260.174pt.
- [22pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.156 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.5
-.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.156 
-       <./figures/distr.pdf>] [23pdfTeX warning (ext4): destination with the sa
-me identifier (name{table.5.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.216 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.5
-.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.216 
-      ]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[24pdfTeX warning (ext4): destination with the same identifier (name{table.5.5}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.311 \subsection
-                 {Simulations for different levels of $\alpha$} \label{s_alpha}
-pdfTeX warning (ext4): destination with the same identifier (name{table.5.6}) h
-as been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.311 \subsection
-                 {Simulations for different levels of $\alpha$} \label{s_alpha}
-pdfTeX warning (ext4): destination with the same identifier (name{table.5.7}) h
-as been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.311 \subsection
-                 {Simulations for different levels of $\alpha$} \label{s_alpha}
-]
-
-LaTeX Warning: Reference `chap:pm' on page 25 undefined on input line 317.
-
-[25pdfTeX warning (ext4): destination with the same identifier (name{table.5.8}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.323 O
-       ur investment horizon is set at $T=20$ weeks and the initial wealth a...
-pdfTeX warning (ext4): destination with the same identifier (name{table.5.9}) h
-as been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.323 O
-       ur investment horizon is set at $T=20$ weeks and the initial wealth a...
-] [26pdfTeX warning (ext4): destination with the same identifier (name{table.5.
-10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.366 
-      ] <figures/y_t.pdf, id=550, 361.35pt x 216.81pt>
-File: figures/y_t.pdf Graphic file (type pdf)
- <use figures/y_t.pdf>
-Package pdftex.def Info: figures/y_t.pdf used on input line 395.
-(pdftex.def)             Requested size: 433.62pt x 260.174pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/var_1.pdf, id=552, 361.35pt x 216.81pt>
-File: figures/var_1.pdf Graphic file (type pdf)
- <use figures/var_1.pdf>
-Package pdftex.def Info: figures/var_1.pdf used on input line 406.
-(pdftex.def)             Requested size: 433.62pt x 260.174pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[27pdfTeX warning (ext4): destination with the same identifier (name{table.5.11
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.418 
-      ] [28pdfTeX warning (ext4): destination with the same identifier (name{fi
-gure.5.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.421 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.421 
-       <./figures/y_t.pdf> <./figures/var_1.pdf
-
-pdfTeX warning: pdflatex (file ./figures/var_1.pdf): PDF inclusion: multiple pd
-fs with page group included in a single page
->] <figures/u_A.pdf, id=582, 361.35pt x 216.81pt>
-File: figures/u_A.pdf Graphic file (type pdf)
- <use figures/u_A.pdf>
-Package pdftex.def Info: figures/u_A.pdf used on input line 427.
-(pdftex.def)             Requested size: 433.62pt x 260.174pt.
-
-<figures/u_B.pdf, id=583, 361.35pt x 216.81pt>
-File: figures/u_B.pdf Graphic file (type pdf)
- <use figures/u_B.pdf>
-Package pdftex.def Info: figures/u_B.pdf used on input line 435.
-(pdftex.def)             Requested size: 433.62pt x 260.174pt.
-
-<figures/u_C.pdf, id=584, 361.35pt x 216.81pt>
-File: figures/u_C.pdf Graphic file (type pdf)
- <use figures/u_C.pdf>
-Package pdftex.def Info: figures/u_C.pdf used on input line 443.
-(pdftex.def)             Requested size: 433.62pt x 260.174pt.
- [29pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.446 \end{figure}
-                   <./figures/u_A.pdf>]
-<figures/u_D.pdf, id=597, 361.35pt x 216.81pt>
-File: figures/u_D.pdf Graphic file (type pdf)
- <use figures/u_D.pdf>
-Package pdftex.def Info: figures/u_D.pdf used on input line 451.
-(pdftex.def)             Requested size: 433.62pt x 260.174pt.
- [30pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.456 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5.7}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.456 
-       <./figures/u_B.pdf> <./figures/u_C.pdf
-
-pdfTeX warning: pdflatex (file ./figures/u_C.pdf): PDF inclusion: multiple pdfs
- with page group included in a single page
->]
-
-LaTeX Warning: Reference `app:E' on page 31 undefined on input line 469.
-
-[31pdfTeX warning (ext4): destination with the same identifier (name{figure.5.8
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.474 
-       <./figures/u_D.pdf>]
-Underfull \hbox (badness 1655) in paragraph at lines 509--512
-[]\T1/phv/m/n/12 We will fo-cus the anal-y-sis based on four sce-nar-ios, $\OML
-/txmi/m/it/12 cc$\T1/phv/m/n/12 , $\OML/txmi/m/it/12 beta\OT1/txr/m/n/12 7$\T1/
-phv/m/n/12 , $\OML/txmi/m/it/12 nu\OT1/txr/m/n/12 7$\T1/phv/m/n/12 , and
- []
-
-[32pdfTeX warning (ext4): destination with the same identifier (name{table.5.12
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.516 
-      ] <figures/y_spec1.pdf, id=640, 361.35pt x 216.81pt>
-File: figures/y_spec1.pdf Graphic file (type pdf)
-
-<use figures/y_spec1.pdf>
-Package pdftex.def Info: figures/y_spec1.pdf used on input line 544.
-(pdftex.def)             Requested size: 426.39255pt x 255.83688pt.
- [33]
-<figures/var_spec1.pdf, id=645, 361.35pt x 216.81pt>
-File: figures/var_spec1.pdf Graphic file (type pdf)
-
-<use figures/var_spec1.pdf>
-Package pdftex.def Info: figures/var_spec1.pdf used on input line 552.
-(pdftex.def)             Requested size: 426.39255pt x 255.83688pt.
- [34pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-9}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.560 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5.10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.560 
-       <./figures/y_spec1.pdf> <./figures/var_spec1.pdf
-
-pdfTeX warning: pdflatex (file ./figures/var_spec1.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
->] <figures/u_spec1.pdf, id=666, 361.35pt x 216.81pt>
-File: figures/u_spec1.pdf Graphic file (type pdf)
-
-<use figures/u_spec1.pdf>
-Package pdftex.def Info: figures/u_spec1.pdf used on input line 567.
-(pdftex.def)             Requested size: 433.62pt x 260.174pt.
-
-<figures/y_spec56789.pdf, id=670, 361.35pt x 216.81pt>
-File: figures/y_spec56789.pdf Graphic file (type pdf)
-
-<use figures/y_spec56789.pdf>
-Package pdftex.def Info: figures/y_spec56789.pdf used on input line 580.
-(pdftex.def)             Requested size: 433.62pt x 260.174pt.
-
-<figures/var_spec56789.pdf, id=671, 361.35pt x 216.81pt>
-File: figures/var_spec56789.pdf Graphic file (type pdf)
-
-<use figures/var_spec56789.pdf>
-Package pdftex.def Info: figures/var_spec56789.pdf used on input line 588.
-(pdftex.def)             Requested size: 433.62pt x 260.174pt.
- [35pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-11}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.591 \end{figure}
-                   <./figures/u_spec1.pdf>] [36pdfTeX warning (ext4): destinati
-on with the same identifier (name{figure.5.12}) has been already used, duplicat
-e ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.627 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-5.13}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.627 
-       <./figures/y_spec56789.pdf> <./figures/var_spec56789.pdf
-
-pdfTeX warning: pdflatex (file ./figures/var_spec56789.pdf): PDF inclusion: mul
-tiple pdfs with page group included in a single page
->]) [37pdfTeX warning (ext4): destination with the same identifier (name{table.
-5.13}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.140 	\include{doc/example}
-                            ]
+l.132 	\include{doc/example}
+                             <./figures/y_t.pdf>]
 \openout2 = `doc/conclusion.aux'.
 
  (./doc/conclusion.tex
 Chapter 6.
-) [38
+) [6
 
 
 
 
-] (./thesis_main.bbl [39
+] (./thesis_main.bbl) [7
 
 
 
-] [40]) [41]
+]
 \openout2 = `doc/appA.aux'.
 
  (./doc/appA.tex
@@ -1254,61 +969,49 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
 
 Chapter A.
-[42
+[8
 
 
 
-] [43] [44]) [45]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
- (./thesis_main.aux (./doc/acknowledgement.aux)
-(./doc/abstract.aux) (./doc/abbreviations.aux) (./doc/symbols.aux)
-(./doc/introduction.aux) (./doc/literature.aux) (./doc/methodology.aux)
-(./doc/results.aux) (./doc/example.aux) (./doc/conclusion.aux) (./doc/appA.aux)
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
+]) [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
+ (./thesis_main.aux (./doc/acknowledgement.aux) (./doc/abstract.aux)
+(./doc/abbreviations.aux) (./doc/symbols.aux) (./doc/introduction.aux)
+(./doc/literature.aux) (./doc/methodology.aux) (./doc/results.aux)
+(./doc/example.aux) (./doc/conclusion.aux) (./doc/appA.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
 Package rerunfilecheck Info: File `thesis_main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
  ) 
 Here is how much of TeX's memory you used:
- 10794 strings out of 493315
- 150280 string characters out of 6145892
- 276002 words of memory out of 5000000
- 13665 multiletter control sequences out of 15000+600000
- 93982 words of font info for 175 fonts, out of 8000000 for 9000
+ 10320 strings out of 493315
+ 144082 string characters out of 6145893
+ 262854 words of memory out of 5000000
+ 13389 multiletter control sequences out of 15000+600000
+ 58012 words of font info for 118 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 43i,18n,51p,518b,587s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,18n,51p,333b,496s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{chapter.A} has been referenced but does not exist
 , replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/txfonts/rtxb.pf
-b></usr/share/texmf/fonts/type1/public/txfonts/rtxbmi.pfb></usr/share/texmf/fon
-ts/type1/public/txfonts/rtxmi.pfb></usr/share/texmf/fonts/type1/public/txfonts/
-rtxr.pfb></usr/share/texmf/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/tex
-mf/fonts/type1/public/txfonts/txbex.pfb></usr/share/texmf/fonts/type1/public/tx
-fonts/txbsy.pfb></usr/share/texmf/fonts/type1/public/txfonts/txex.pfb></usr/sha
-re/texmf/fonts/type1/public/txfonts/txsy.pfb></usr/share/texmf/fonts/type1/publ
-ic/txfonts/txsya.pfb></usr/share/texmf/fonts/type1/public/txfonts/txsyb.pfb></u
-sr/share/texmf/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texmf/fonts/typ
+lic/txfonts/rtxmi.pfb></usr/share/texmf/fonts/type1/public/txfonts/rtxr.pfb></u
+sr/share/texmf/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texmf/fonts/typ
 e1/urw/helvetic/uhvb8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvr8a.pf
 b></usr/share/texmf/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf/font
-s/type1/urw/times/utmb8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmbi8a.pf
-b></usr/share/texmf/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf/fonts/ty
-pe1/urw/times/utmri8a.pfb>
-Output written on thesis_main.pdf (58 pages, 389782 bytes).
+s/type1/urw/times/utmr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmri8a.pf
+b>
+Output written on thesis_main.pdf (21 pages, 76147 bytes).
 PDF statistics:
- 875 PDF objects out of 1000 (max. 8388607)
- 745 compressed objects within 8 object streams
- 210 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 201 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

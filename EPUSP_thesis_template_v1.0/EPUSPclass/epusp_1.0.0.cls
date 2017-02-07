@@ -2,7 +2,7 @@
 % epusp_1.0.0.cls
 % 
 % This is the main class file and it was based on the works of Miguel Vinicius 
-% Santini Frasson and Paulo Barreto
+% Santini Frasson, Paulo Barreto, and the team of abnTex
 %
 % With this new structure I hope that any new required update will be easily 
 % implemented and shared with the community
@@ -19,12 +19,12 @@
 % This template has been given to you free of charges and it is the combined work
 % of people who could and wanted to help the university community
 %
-% If you find either any mistake or need for updating and have the skills to
-% correct this class, please, do so and share it with everybody else
+% Please, if you have the skills to improve this class, please, do so and share
+% it with everybody else.
 %
-% Please, after updating this class, give a brief and precise overview about 
+% After updating this class, give a brief and precise overview about 
 % the changes you performed in the file "version_log.txt"
-% When updating, please, follow the general versioning guidelines found in the file
+% When updating, follow the general versioning guidelines found in the file
 % "version_log.txt"
 %
 % If you have any comments or suggestions about the abnTex, please, get in 

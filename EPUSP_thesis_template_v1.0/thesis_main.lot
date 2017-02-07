@@ -1,18 +1,3 @@
 \select@language {english}
-\contentsline {table}{\numberline {1}{\ignorespaces List of assets.}}{19}{table.5.1}
-\contentsline {table}{\numberline {2}{\ignorespaces Market operation modes.}}{22}{table.5.2}
-\contentsline {table}{\numberline {3}{\ignorespaces Operation modes transition matrix.}}{23}{table.5.3}
-\contentsline {table}{\numberline {4}{\ignorespaces Annual expected returns per market operation mode.}}{23}{table.5.4}
-\contentsline {table}{\numberline {5}{\ignorespaces Annual expected covariances for mode 1.}}{24}{table.5.5}
-\contentsline {table}{\numberline {6}{\ignorespaces Annual expected covariances for mode 2.}}{24}{table.5.6}
-\contentsline {table}{\numberline {7}{\ignorespaces Annual expected covariances for mode 3.}}{24}{table.5.7}
-\contentsline {table}{\numberline {8}{\ignorespaces Annual expected covariances for mode 4.}}{25}{table.5.8}
-\contentsline {table}{\numberline {9}{\ignorespaces Annual expected covariances for mode 5.}}{25}{table.5.9}
-\contentsline {table}{\numberline {10}{\ignorespaces Scenarios definition.}}{26}{table.5.10}
-\contentsline {table}{\numberline {11}{\ignorespaces Resulting total variance and other parameters for $PC(\nu ,\beta ,\alpha )$ problem.}}{27}{table.5.11}
-\contentsline {table}{\numberline {12}{\ignorespaces Scenarios that combine specific changes in the coefficients of $\beta $ and $\nu $ and a base scenario $cc$.}}{32}{table.5.12}
-\contentsline {table}{\numberline {13}{\ignorespaces Effects of changes in $\beta $, $\nu $, and $\alpha $ on the expected portfolio's value, its variance, and on the wealth allocation policy.}}{37}{table.5.13}
-\contentsline {table}{\numberline {14}{System's output for all scenarios.}}{42}{table.A.14}
-\contentsline {table}{\numberline {15}{System's output variance for all scenarios.}}{43}{table.A.15}
-\contentsline {table}{\numberline {16}{Control policy for scenario A.}}{43}{table.A.16}
-\contentsline {table}{\numberline {17}{Control policy for scenario B.}}{44}{table.A.17}
+\contentsline {table}{\numberline {1}{\ignorespaces Scenarios definition.}}{5}{table.5.1}
+\contentsline {table}{\numberline {2}{System's output for all scenarios.}}{8}{table.A.2}

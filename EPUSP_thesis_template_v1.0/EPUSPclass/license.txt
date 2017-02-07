@@ -25,4 +25,4 @@
 %   Author of adaptations to the particular rules of the Escola Politécnica, University 
 %   of São Paulo: Paulo Barreto (original version: 2003)
 %
-%   Author of adaptations and update of the Paulo Barreto's file: Fabio Barbieri (2017)
+%   Author of adaptations and updates to the Paulo Barreto's file: Fabio Barbieri (2017)

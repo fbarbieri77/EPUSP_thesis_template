@@ -133,7 +133,7 @@
 %	- I performed many updates and changes over the whole class and the main 
 %	  file before I realise there should be a new class file and that is the
 %	  only reason I do not show more detailed information about every single change.
-%	  I decided to start an almost fresh version and provide an easier way for 
+%	  I decided to start an almost fresh version and provide an easier way for further
 %	  updating and contributions from the community
 %
 % Added in version ?

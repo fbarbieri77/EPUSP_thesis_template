@@ -3,6 +3,8 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis_main.aux
 A level-1 auxiliary file: doc/acknowledgement.aux
 A level-1 auxiliary file: doc/abstract.aux
+A level-1 auxiliary file: doc/abbreviations.aux
+A level-1 auxiliary file: doc/symbols.aux
 A level-1 auxiliary file: doc/introduction.aux
 A level-1 auxiliary file: doc/literature.aux
 A level-1 auxiliary file: doc/methodology.aux
@@ -31,44 +33,44 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex2.googlecode.com                           |
 +---------------------------------------------------------+
-You've used 34 entries,
+You've used 9 entries,
             6642 wiz_defined-function locations,
-            1376 strings with 14122 characters,
-and the built_in function-call counts, 28604 in all, are:
-= -- 2240
-> -- 1059
-< -- 71
-+ -- 437
-- -- 317
-* -- 2183
-:= -- 3683
-add.period$ -- 93
-call.type$ -- 35
-change.case$ -- 353
-chr.to.int$ -- 106
-cite$ -- 30
-duplicate$ -- 1464
-empty$ -- 2050
-format.name$ -- 1489
-if$ -- 6798
+            1233 strings with 10345 characters,
+and the built_in function-call counts, 6397 in all, are:
+= -- 589
+> -- 186
+< -- 15
++ -- 119
+- -- 55
+* -- 441
+:= -- 838
+add.period$ -- 15
+call.type$ -- 10
+change.case$ -- 71
+chr.to.int$ -- 21
+cite$ -- 5
+duplicate$ -- 268
+empty$ -- 499
+format.name$ -- 257
+if$ -- 1555
 int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 594
-newline$ -- 154
-num.names$ -- 150
-pop$ -- 790
+missing$ -- 132
+newline$ -- 34
+num.names$ -- 25
+pop$ -- 164
 preamble$ -- 1
-purify$ -- 136
+purify$ -- 33
 quote$ -- 0
-skip$ -- 1569
+skip$ -- 465
 stack$ -- 1
-substring$ -- 1278
-swap$ -- 733
-text.length$ -- 46
+substring$ -- 313
+swap$ -- 136
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 33
+type$ -- 5
 warning$ -- 0
-while$ -- 228
+while$ -- 42
 width$ -- 0
-write$ -- 480
+write$ -- 89

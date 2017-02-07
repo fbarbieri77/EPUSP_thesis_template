@@ -1,0 +1,39 @@
+% -----------------------------------------------------------------------------
+% margins.tex
+%
+% set the vertical and horizontal margins
+% -----------------------------------------------------------------------------
+
+% Vertical lenghts 
+% ------------------
+
+\ifthenelse{\boolean{ABNTheader}}{%
+   	% The distance beetwen the top of the header and the top of the text is
+   	% \headerTOtext = \headheight + \headsep
+   	% ...but, we have to consider the depth of the header, adding 2mm.
+   	\setlength{\headsep}{\headerTOtext - 0.2cm - \headheight}
+   	% The distance beetwen the paper border and the number must be 2cm
+   	% 2cm=\topmargin+\voffset+1in
+    \setlength{\topmargin}{\topM-1in-\voffset}  %{2.5cm-1in-\voffset} 
+   	% The inferior border must be 2.5cm % Paulo Barreto
+    \setlength{\textheight}% 
+	{\paperheight-\voffset-1in-\topmargin-\headheight-\headsep-2.0cm}
+}%
+{%
+	% if no ABNTheader
+	% Let's fake it: both vertical margin and de same horizontal margin.
+   	\setlength{\topmargin}{\headerTOtext - \headheight-\headsep-\voffset-1in}
+   	\setlength{\textheight}% 
+    {\paperheight - \topM - \footskip - \bottomM}
+}%
+
+
+% Horizontal lenghts 
+% ------------------
+
+\setlength{\oddsidemargin}{\leftM-\hoffset-1in} 
+% for compatibility with twoside print, the length of the margins must be 
+% exchanged.
+\setlength{\evensidemargin}{\rightM - \hoffset - 1in}
+% \paperwidth=\textwidth+\oddsidemargin+\hoffset+1in+2.5cm % Paulo Barreto
+\setlength{\textwidth}{\paperwidth-\oddsidemargin-\hoffset-1in - \rightM}

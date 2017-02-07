@@ -1,0 +1,10 @@
+\select@language {brazil}
+\contentsline {chapter}{\numberline {1}Introdu\c c\~ ao}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Revis\~ ao da Literatura}{2}{chapter.2}
+\contentsline {chapter}{\numberline {3}Metodologia}{3}{chapter.3}
+\contentsline {section}{\numberline {3.1}Nota\c c\~ oes e defini\c c\~ oes}{3}{section.3.1}
+\contentsline {chapter}{\numberline {4}Resultados}{4}{chapter.4}
+\contentsline {chapter}{\numberline {5}Exemplo num\' erico}{5}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclus\~ ao}{6}{chapter.6}
+\contentsline {chapter}{Refer\^ encias}{7}{chapter.6}
+\contentsline {chapter}{Ap\^ endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} bla bla}{8}{chapter.A}

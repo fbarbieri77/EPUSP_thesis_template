@@ -1,0 +1,312 @@
+% -----------------------------------------------------------------------------
+% deprecated.tex
+%
+% This file contains either deprecated or not used commands, environments, etc,
+% that were kept here to further careful assessment and deletion
+% -----------------------------------------------------------------------------
+
+
+% deprecated from preamble.tex
+% ----------------------------
+
+% \NeedsTeXFormat{LaTeX2e}%
+% \ProvidesClass{abnt}%
+%  [2002/05/20 version 1 da Classe LaTeX2e ABNT]
+
+% Font track mechanism (like in utthesis.cls)
+% - removed from implementation since version 0.3.
+% - use instead package `relsize'.
+
+%\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+%\renewcommand*\l@subsection{\@dottedtocline{2}{3.8em}{3.2em}}
+%\renewcommand*\l@subsubsection{\@dottedtocline{3}{7.0em}{4.1em}}
+%\renewcommand*\l@paragraph{\@dottedtocline{4}{10em}{5em}}
+%\renewcommand*\l@subparagraph{\@dottedtocline{5}{12em}{6em}}
+
+
+%\ifthenelse{\boolean{ABNTcommonpack}}%
+% {%
+%   \typeout{ABNT: Opcao 'pacotescomuns' ativa!}
+%   % fontenc[T1] --> removed for possible pdf compatibility
+%   % inputenc[latin1]: more common input encoding
+%   \typeout{ABNT -> incluindo inputenc[latin1]}%
+%   \RequirePackage[latin1]{inputenc}%
+%   % amsmath: AMS math environments for LaTeX
+%   \typeout{ABNT -> incluindo amsmath}%
+%   \RequirePackage{amsmath}%
+%   % amssymb: AMS symbols
+%   \typeout{ABNT -> incluindo amssymb}%
+%   \RequirePackage{amssymb}%
+%   % amsbsy: bold version of symbols in amssymb
+%   \typeout{ABNT -> incluindo amsbsy}%
+%   \RequirePackage{amsbsy}%
+%   % dsfont: double stroke fonts (as IR, IN, etc)
+   \IfFileExists{dsfont.sty}{%
+     \typeout{ABNT -> incluindo dsfont}%
+     \RequirePackage{dsfont}}{}%
+   % eucal[mathscr]: new calligraphic letters
+   \typeout{ABNT -> incluindo eucal[mathscr]}%
+   \RequirePackage[mathscr]{eucal}%
+   % makeidx -> removed. Useless if the user don't care about.  
+ }%
+ {}%
+ 
+% logo
+\newcommand{\abnTeX}{{\scshape a\kern-.13exb\kern-.13exn}\kern-.13ex\TeX}
+
+%%% final message - announcement %%%%
+
+\AtEndDocument{%
+\newcommand{\spABNT}{\space\space\space\space\space\space\space\space}%
+\typeout{+-------------------------------------------------------------------+}
+\typeout{%
+| Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |}%
+\typeout{%
+|\spABNT\spABNT\space\space
+http://abntex.codigolivre.org.br\space\spABNT\spABNT|}%
+%\typeout{%
+%| Sua opiniao eh de grande ajuda para nos.\spABNT Ass: grupo abnTeX |}%
+\typeout{+-------------------------------------------------------------------+}
+}%
+
+
+% Deprecated from appendix.tex
+% ----------------------------
+
+%\providecommand{\annexname}{Anexo}
+%\providecommand{\appendixname}{Ap\^endice} % for completeness ;-)
+
+\newcommand{\annex}{
+  \setcounter{chapter}{0}
+  \resetsubcounters{chapter}
+  \gdef\thechapter{\Alph{chapter}}
+  \gdef\@chapapp{Anexo}
+  \renewcommand{\anapchaptername}{\annexname}
+  \global\let\@chapter\@anapchapter}
+
+\let\anexo\annex
+
+
+% Deprecated from commands.tex
+% ----------------------------
+
+% -----------------------------------------------------------------------------
+% Deprecated commands or no longer used, but I left it here
+% for further checking before deleting it
+% -----------------------------------------------------------------------------
+
+
+% Ficha catalográfica
+% -------------------
+% Deprecated! Use the pdf from the poli website instead
+% ------------------------
+\usepackage{lastpage}
+
+\newcommand{\PoliAutorFichaCatalografica}{}
+\newcommand{\PoliAutorIniciaisMaisSobrenome}{}
+
+\newcommand{\PoliRefFichaCatalografica}{%
+  \PoliTipoDocData~ --- Escola Politécnica of Universidade de São Paulo.
+  \PoliDepartamentoData.}
+
+\newcommand{\PoliFichaCatalograficaData}{}
+
+% Quadro de revisão
+% ------------------
+% Deprecated!
+% -----------
+\newboolean{PoliRevisao}
+\setboolean{PoliRevisao}{false}
+\newcommand{\PoliEdicaoRevisadaData}{-- ed.~rev. --}
+\newcommand{\PoliDataDaRevisao}{\today}
+\newcommand{\PoliQuadroDeRevisaoData}{Este exemplar foi revisado e alterado em relação à versão original, sob responsabilidade única do autor e com a anuência de seu orientador.}
+\newcommand{\PoliAssinaturaAutor}{Assinatura do autor}
+\newcommand{\PoliAssinaturaOrientador}{Assinatura do orientador}
+
+\newcommand{\PoliQuadroDeRevisao}{%
+\begin{espacosimples}
+\begin{flushleft}
+%\hspace{-1.5cm}
+\begin{tabular}{| @{\hspace{.5cm}} p{\textwidth-1cm} @{\hspace{.5cm}}|}
+  \hline
+
+  \vspace{.1cm}
+  \noindent\fcformat\PoliQuadroDeRevisaoData \\
+
+  \vspace{.1cm}
+  \noindent\fcformat\ABNTlocaldata, \fcformat\PoliDataDaRevisao. \\
+
+  \vspace{.5cm}%
+  \noindent\fcformat\PoliAssinaturaAutor \\
+
+  \vspace{.5cm}%
+  \noindent\fcformat\PoliAssinaturaOrientador \\
+  \vspace{.5cm}
+  \\
+
+  \hline
+\end{tabular}
+\end{flushleft}
+\end{espacosimples}
+}
+
+\newcommand{\fichacatalografica}{%
+\newpage
+
+\ifthenelse{\boolean{PoliRevisao}}{\PoliQuadroDeRevisao}{}
+
+\vspace*{\stretch{1}}
+
+\begin{espacosimples}
+  
+\begin{center}
+%\hspace{2.7cm}%
+\textbf{\textsf{\uppercase{Cataloguing data}}}
+\end{center}
+\begin{flushleft}
+%\hspace{-1.5cm}
+\begin{tabular}{| @{\hspace{1cm}} p{\textwidth-2cm} @{\hspace{1cm}}|}
+  \hline
+
+  \vspace{.1cm}
+  \noindent\fcformat\PoliAutorFichaCatalografica \\
+
+  \hspace{.8cm}%
+  \fcformat\ABNTtitulodata/ \fcformat\PoliAutorIniciaisMaisSobrenome.
+  \ifthenelse{\boolean{PoliRevisao}}{\fcformat\PoliEdicaoRevisadaData}{}
+  \fcformat\ABNTlocaldata, \fcformat\ABNTdatadata.\\
+  \hspace{.8cm}%
+  \fcformat{\pageref{LastPage}~p.} \\
+
+  \vspace{.1cm}\hspace{.8cm}%
+  \fcformat\PoliRefFichaCatalografica \\
+
+  \vspace{.1cm}\hspace{.8cm}%
+  \fcformat\PoliFichaCatalograficaData
+  \vspace{.3cm}
+  \\
+
+  \hline
+\end{tabular}
+\end{flushleft}
+
+\end{espacosimples}
+
+}
+
+
+%%%%%%%%%%%   résumé  %%%%%%%%%%%
+% Ambiente para Résumé. O mesmo efeito do abstract, mas em francês.
+%
+\newcommand{\resumename}{R\'esum\'e}
+\newenvironment{resume}%
+  {%
+   \if@openright\cleardoublepage\else\clearpage\fi%
+   \otherheadtrue\pretextualchapter{\resumename}%
+   \begin{espacosimples}%
+  }%
+  {\end{espacosimples}\newpage}%résumé
+
+
+%%%%%%%%%%%   Zusammenfassung  %%%%%%%%%%%
+% Ambiente para Zusammenfassung. O mesmo efeito do abstract, mas em alemão.
+%
+\newcommand{\zusammenfassungname}{Zusammenfassung}
+\newenvironment{zusammenfassung}%
+  {%
+   \if@openright\cleardoublepage\else\clearpage\fi%
+   \otherheadtrue\pretextualchapter{\zusammenfassungname}%
+   \begin{espacosimples}%
+  }%
+  {\end{espacosimples}\newpage}%zusammenfassung
+
+
+%%%%%%% Folha de aprovacao %%%%%%%
+
+% Command \assinatura for signature
+
+% width of the line and text under the line
+\newlength{\ABNTsignwidth}
+\setlength{\ABNTsignwidth}{8cm}
+
+% thickness of the line
+\newlength{\ABNTsignthickness}
+\setlength{\ABNTsignthickness}{0pt}
+
+% ammount of space left between previous text and th signature line
+\newlength{\ABNTsignskip}
+\setlength{\ABNTsignskip}{2.5cm}
+
+% \assinatura{name} -> types a line with name under the line, centralized
+%
+% \assinatura*{name} -> Creates the box with the line and name under
+%     it, but the box has no position assigned. However the line and the
+%     name are centralized with respect to each other.
+
+\newcommand{\assinatura}{\@ifstar{\ABNTsign}{\ABNTcsign}}
+
+\newcommand{\ABNTsign}[1]{%
+  \parbox[t]{\ABNTsignwidth}{\espaco{simples}\vspace*{\ABNTsignskip}\centering%
+  \rule{\ABNTsignwidth}{\ABNTsignthickness}\\%
+  \nopagebreak #1\par}%
+}
+
+\newcommand{\ABNTcsign}[1]%
+  {\begingroup\par\centering\ABNTsign{#1}\par\endgroup}
+
+% environment "folhadeaprovacao" 
+%   just clearpage correctly to twoside and openright compatibility
+%
+\newenvironment{folhadeaprovacao}%
+  {\if@openright\cleardoublepage\else\clearpage\fi\begingroup}%
+  {\endgroup\if@openright\cleardoublepage\else\clearpage\fi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% I will no longer include List of Symbols in the wishlist for this class.
+
+
+
+
+%% Environment `citado'=`citacao', similar to quoation, but with 4cm of
+%% extra left margin, in a smaller font and simple line spacing.
+ 
+\newenvironment{citado}%
+  {\begin{espacosimples}%
+   \small
+   \begin{list}{}{%
+       \setlength{\listparindent}{0cm}%
+       \setlength{\itemindent}{\listparindent}%
+       \setlength{\rightmargin}{0cm}%
+       \setlength{\leftmargin}{4cm}%
+       \setlength{\parsep}{0pt}}%
+    \item\relax}%
+  {\end{list}\end{espacosimples}}
+
+\newenvironment{citacao}%
+  {\begin{citado}}%
+  {\end{citado}}%
+
+
+% deprecated from preamble.tex
+% ----------------------------
+
+% ----- begin Jomi fix -----
+   % novo pageref para corrigir o erro da dupla hyperref x abnt
+   %\renewcommand{\pageref}[1]{%
+     %\meupageref{#1}
+   %}
+   %\newcommand{\meupageref}[1]{%
+     %\hyperlink{page.\hypergetpageref{#1}}{\hypergetpageref{#1}}%
+   %}
+% ----- end Jomi fix -----
+
+% deprecated from thesis_main.tex
+% ----------------------------
+% Ficha Catalográfica
+%\setboolean{PoliRevisao}{true} % gera o quadro de revisão após a defesa
+%\renewcommand{\PoliFichaCatalograficaData}{%
+%  1. Controle estoc\' astico \#1. 2. Sistemas lineares \#2. 3. Controle \' otimo \#3.
+%  4. Vari\^ ancia m\' axima \#4. 5. Otimiza\c c\~ ao de carteiras de investimentos \#5.
+%  I. Universidade de São Paulo. Escola Politécnica.
+%  \PoliDepartamentoData. II. t.}
+%\fichacatalografica % formata a ficha

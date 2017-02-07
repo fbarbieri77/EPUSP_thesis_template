@@ -1,0 +1,82 @@
+% -----------------------------------------------------------------------------
+% line_spacing.tex
+%
+% definitions of
+%	- setstretch
+%	- setdisplayskipstretch
+%	- espaco
+%	- espacosimles
+%	- espacoumemeio
+%	- espacoduplo
+% -----------------------------------------------------------------------------
+
+
+% since version 0.3 the `setspace' package is used
+% ------------------------------------------------
+
+% Space scheme in notes (footnotes and margin notes) removed since
+% version 0.3 since setspace do not support it; footnotes are always
+% single spaced!
+
+\IfFileExists{setspace.sty}%
+{\RequirePackage{setspace}}% then
+% else
+{% 
+% first a warning at the end of the document and than 
+% fake the \setstretch command, not provided by setspace.
+\AtEndDocument{\ClassWarningNoLine{abnt}%
+% warning text
+{-----------------------------------------------\MessageBreak%
+Package 'setspace' needed and was not found.\MessageBreak%
+Please install it or check for errors in loading it.\MessageBreak%
+checar por erros em sua leitura. Ele pode ser\MessageBreak%
+It can be found at CTAN (www.ctan.org), for example.\MessageBreak%
+For more information, refer to the class manual.\MessageBreak%
+-----------------------------------------------}%
+}%
+\ifthenelse{\isundefined{\@currsize}}
+  {\providecommand{\setstretch}[1]{\def\baselinestretch{#1}\normalsize}}
+  {\providecommand{\setstretch}[1]{\def\baselinestretch{#1}\@currsize}}
+}
+
+% This command is defined by 'setspace' package, to ajust extra spacing
+% before and after display math. It depends on if your setspace.sty is of
+% 21 march 1998 or ouder. 
+\providecommand{\setdisplayskipstretch}[1]{\relax}
+
+% equivalent to the option 'nodisplayskipstretch' of setspace.
+\setdisplayskipstretch{1.0}
+
+
+% \espaco{} - ativa o espacamento para um numero dado (taxa de
+% esticamento), mas aceita os parametros simples, umemeio, e duplo.
+
+\newcommand{\espaco}[1]%
+{\ifthenelse{\equal{#1}{simples}}% se espacamentos simples
+  {\setstretch{\taxaespacosimples}} % entao
+  { %senao (espaco simples)
+   \ifthenelse{\equal{#1}{umemeio}}% se espaco 1 1/2
+     {\setstretch{\taxaespacoumemeio}} % entao
+     {%senao (espaco 1 1/2)
+      \ifthenelse{\equal{#1}{duplo}}% se espaco duplo
+        {\setstretch{\taxaespacoduplo}}% entao
+        {\setstretch{#1}} % senao espaco dado
+     } %fim se espaco 1 1/2
+  } %fim se espaco simples
+}%fim newcommand
+
+\newenvironment{espacosimples}
+  {\begin{spacing}{\taxaespacosimples}}{\end{spacing}}
+
+\newenvironment{espacoumemeio}
+  {\begin{spacing}{\taxaespacoumemeio}}{\end{spacing}}
+
+\newenvironment{espacoduplo}%
+  {\begin{spacing}{\taxaespacoduplo}}{\end{spacing}}
+
+\newboolean{ABNThypertoc}
+\AtBeginDocument{%
+% default spacing (set by class options)
+\espaco{\ABNTespacodefault}%
+\@ifpackageloaded{hyperref}{\setboolean{ABNThypertoc}{true}}{\setboolean{ABNThypertoc}{false}}%
+}

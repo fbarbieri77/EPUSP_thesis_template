@@ -1,0 +1,47 @@
+% -----------------------------------------------------------------------------
+% index.tex
+% 
+% set the index environment
+% -----------------------------------------------------------------------------
+
+\newboolean{ABNTbalancedindex}
+\setboolean{ABNTbalancedindex}{true}
+
+\newcommand*\IndiceNaoBalanceado{\setboolean{ABNTbalancedindex}{false}}
+
+% ====  theindex  ====
+% Similar to old theindex, but without capital page marks, automatically
+% in toc and now with balanced colunms
+\renewenvironment{theindex}%
+  {%
+   \ifthenelse{\boolean{@twocolumn}}%
+     {\setboolean{ABNTrestorecol}{true}\onecolumn}%
+     {\setboolean{ABNTrestorecol}{false}}%
+   \if@openright\cleardoublepage\else\clearpage\fi%
+   \thispagestyle{\chaptertitlepagestyle}%
+   \global\@topnum\z@%
+   \@afterindentfalse%
+   \@mkboth{\indexname}{\indexname}% 
+   \ifthenelse{\boolean{ABNTincludeintoc}}%
+      {\ABNTaddcontentsline{toc}{chapter}{\indexname}}%
+      {}%
+   \@makeschapterhead{\indexname}%
+   \@afterheading%
+   \begingroup%
+   \setlength{\columnsep}{35pt}%
+   \setlength{\columnseprule}{0pt}
+   \ifthenelse{\boolean{ABNTbalancedindex}}
+     {\begin{multicols}{2}}
+     {\begin{multicols*}{2}}%
+   \espaco{simples}%
+   \setlength{\parindent}{0cm}%
+   \setlength{\parskip}{.3pt}%
+   \let\item\@idxitem%
+  }%
+  {%
+   \ifthenelse{\boolean{ABNTbalancedindex}}
+     {\end{multicols}}
+     {\end{multicols*}}%
+   \endgroup%
+   \ifthenelse{\boolean{ABNTrestorecol}}{\twocolumn}{}%
+  }%

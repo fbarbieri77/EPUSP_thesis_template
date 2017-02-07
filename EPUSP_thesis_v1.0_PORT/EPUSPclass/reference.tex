@@ -1,0 +1,43 @@
+% -----------------------------------------------------------------------------
+% reference.tex
+%
+% thebibliography environment setup
+% -----------------------------------------------------------------------------
+
+\renewenvironment{thebibliography}[1]%
+  {% replacing \chapter*{\bibname\@mkboth...}
+   \if@openright\cleardoublepage\else\clearpage\fi%
+   \thispagestyle{\chaptertitlepagestyle}%
+   \global\@topnum\z@%
+   \@afterindentfalse%
+%\renewcommand{\bibname}{Refer\^encias} % adaptação para ABNT/EPUSP
+\renewcommand{\bibname}{\refName}
+   \@mkboth{\bibname}{\bibname}% end \chapter*{\bibname...}
+   \ifthenelse{\boolean{ABNTincludeintoc}}%
+      {\ABNTaddcontentsline{toc}{chapter}{\bibname}}%
+      {}%
+    \if@twocolumn%
+      \@topnewpage[\@makeschapterhead{\bibname}]%
+    \else%
+      \@makeschapterhead{\bibname}%
+      \@afterheading%
+    \fi%
+   \list{\@biblabel{\@arabic\c@enumiv}}%
+        {\settowidth\labelwidth{\@biblabel{#1}}%
+         \leftmargin\labelwidth%
+         \advance\leftmargin\labelsep%
+         \@openbib@code%
+         \usecounter{enumiv}%
+         \let\p@enumiv\@empty%
+         \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+   \sloppy%
+   \espaco{simples}
+   \clubpenalty4000%
+   \@clubpenalty \clubpenalty%
+   \widowpenalty4000%
+   \sfcode`\.\@m%
+  }% end of \begin{thebibliography}
+  {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+   \endlist%
+  }% end of \end{thebibliography}

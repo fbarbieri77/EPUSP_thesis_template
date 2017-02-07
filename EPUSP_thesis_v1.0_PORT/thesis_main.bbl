@@ -1,0 +1,41 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\providecommand{\bibtextitlecommand}[2]{#2}
+\abntbstabout{v<VERSION> }
+
+\bibitem[Li, Zhou e Rami 2003]{li2003}
+\abntrefinfo{Li, Zhou e Rami}{LI; ZHOU; RAMI}{2003}
+{LI, X.; ZHOU, X.~Y.; RAMI, M.~A. \bibtextitlecommand{article}{Indefinite
+  stochastic linear quadratic control with markovian jumps in infinite time
+  horizon}.
+\textbf{Journal of Global Optimization}, v.~27, p. 149--175, 2003.}
+
+\bibitem[Lim e Zhou 1999]{lim}
+\abntrefinfo{Lim e Zhou}{LIM; ZHOU}{1999}
+{LIM, A.; ZHOU, X.~Y. \bibtextitlecommand{article}{Stochastic optimal lqr
+  control with integral quadratic constraints and indefinite control weights}.
+\textbf{IEEE Transactions on Automatic Control}, v.~44, p. 1359--1369, 1999.}
+
+\bibitem[Liu, Yin e Zhou 2005]{liu}
+\abntrefinfo{Liu, Yin e Zhou}{LIU; YIN; ZHOU}{2005}
+{LIU, Y.; YIN, G.; ZHOU, X.~Y. \bibtextitlecommand{article}{Near-optimal
+  controls of random-switching lq problems with indefinite control weight
+  costs}.
+\textbf{Automatica}, v.~41, p. 1063--1070, 2005.}
+
+\bibitem[Luo e Feng 2004]{luo}
+\abntrefinfo{Luo e Feng}{LUO; FENG}{2004}
+{LUO, C.; FENG, E. \bibtextitlecommand{article}{Generalized differential
+  riccati equation and indefinite stochastic lq control with cross term}.
+\textbf{Applied Mathematics and Computation}, v.~155, p. 121--135, 2004.}
+
+\bibitem[Zhu 2005]{zhu2005}
+\abntrefinfo{Zhu}{ZHU}{2005}
+{ZHU, J. \bibtextitlecommand{article}{On stochastic riccati equations for the
+  stochastic lqr problem}.
+\textbf{Systems and Control Letters}, v.~54, p. 119--124, 2005.}
+
+\end{thebibliography}

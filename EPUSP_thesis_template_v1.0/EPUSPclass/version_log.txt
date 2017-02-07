@@ -1,0 +1,139 @@
+% -----------------------------------------------------------------------------
+% version_log.txt
+%
+% This file contains the changes in the previous class file of prof. Paulo
+% Barreto as well as the overview of the main changes I took to stablish a
+% new structure to the class
+%
+% Recommended versioning guidelines
+%
+% refer to the version label vX.Y.Z
+%	- add 1 to X if you have performed a drastic overhaul by simplifying or 
+%	  updating the sofware commands, environments, macros, etc, keeping in
+%	  mind that the end result should be easy to update by non-experts
+%	- add 1 to Y if you have performed small changes or updates in the
+%	  sofware commands, environments, macros, etc. (things related to Latex)
+%	- add 1 to Z if you have updated the formatting, packages used, or other
+%	  small changes related to the either the ABNT rules or Poli guidelines
+%	- there is no need to create a different version if you change the 
+%	  language of the text (current in English as should be all scientific texts,
+%	  if we were in the 18th century I would had written this class in Latin!)
+% -----------------------------------------------------------------------------
+
+
+%  List of Changes
+%  ---------------
+
+% $Log: abnt.cls,v $
+% Revision 1.21.2.1  2003/05/30 10:16:07  gweber
+% Correction of bug 137 which causes the class to fail when loading
+% the package hyperref and using \tableofcontents.
+% This also resolves partially bugs 82 and 51.
+%
+%
+% Added in version 1.1 patch 1
+%
+% - fixed bug of undefined \ABNT<section name>mark, which shows twice the
+%   section name (only for subsection, subsubsection, and paragraph)
+%
+% Added in version 1.1
+%
+% - Fixed bug of missing paragraphy after \chapter
+% - \ProximoForaDoSumario has optional parameter to et page marks
+% - Fixed bug of abscense of package setspace.
+% - Added options `abntfigtabnum' and `normalfigtabnum' to deal with
+%   figure and table counters.
+% - Added abnt style for toc. Options `abnttoc' and
+%   `normaltoc' were added.
+% - Fixed bug of defining pagestyles only if non-noheader.
+%
+% Added in version 1 (finally)
+%
+% - Fixed mispelling on command \espaco.
+% - Fixed "capsec" (not working before).
+% - Added full support for Annex and Appendix, with several class options
+%   and commands for customization.
+% - Not using package "textcase" anymore, since there is a undesirable
+%   extra space included with \MakeUppercase.
+% - Fixed default options. Now "openright" is really default.
+% - Now using feature of "setspace" to avoid extra spacing on display
+%   math. No bugs if the version of setspace is not up to date.
+% - Added \ProximoForaDoSumario, to avoid one to not include all \chapter*
+%   if one wants to set diferently the title and contents of such chapters.
+% - Fixed bug on \part toc entries (buggy extra space)
+% - Now font size for \capter(*) is given by \ABNTchaptersize, preventing a
+%   boring redefinition of \ABNTtocchapterfont.
+% - Option paccomuns no longer default.
+%
+% Added in version 1 beta 3
+%
+% - Fixed bug in page marks for \section*{}.
+% - "setspace" no longer require especific (new) version.
+% - Added "no displayskip stretch" support offered by 'setspace' for better
+%   aesthetic.
+% - Added compatibility with "hyperref" package (no more incompatible
+%   optional parameter on \chapter* -- hyperref redefines some commands)
+% - Useless commands removed: \cabecalhoesq and \cabecalhodir.
+%
+% Added in version 1 beta 2
+%
+% - Correct figure and table counter.
+% - Some support to "folha de apresentacao", including environment
+%     \begin{folhadeapresentacao} e \assinatura{} (signature).
+% - Fixed bug in pnumplain and headers.
+% - Fixed bug in page marks for \@schapter.
+%
+% Added in version 1 beta
+%
+%   Total reformulation of the class! The main added feature are:
+% - Good machanism for "Folha de Rosto" (face page) added.
+% - Page numbering squemes according to the norms.
+% - Right page headings.
+% - Correct section titles.
+% - Several options added.
+% - Features removed, like margin care
+% ...too many changes to list. Just like a "new" class.
+%
+% Added in version 0.4.3
+%
+% - Stupid but severe bug on \listoffigures and \listoftables 
+%     left from previous version finally removed
+% - Bug fixes in theindex and thebibliography
+% - Redefinition of \cleardoublepage (empty page => page style empty)
+% - This `list of changes' added
+%
+% Added in version 0.4.2
+%
+% - Added \StarChaptersInTOC, \StarChaptersNotInTOC to differenciate  
+%    from "standard" (old) stared chapters like \tableofcontents,
+%    \listoffigures, \listoftables, thebibliography and theindex.
+% - Huge bugs in commands or environments \tableofcontents, \listoffigures,
+%    \listoftables, thebibliography and theindex fixed.
+% - Command \SpAcEs changed to \spABNT (more reliable than before)
+%
+% Added in version 0.4.1
+%
+% - Extract forgotten debug command
+% - Fix conflict (\Sp command) in final messagem, creating \SpAcEs (and
+%     hoping nobody made it before)
+%
+%
+% New changes and file restructuring by Fabio Barbieri
+% Restructuring and update of the file abnt.cls, version 1.21.2.1 of 05/30/2003
+%
+% - The main changes implemented were:
+% 	- structuring of the file into multiple files in order to ease maintenance
+%	- consolidation of the main formatting definitions in one file
+%	  (definitions.tex) in order to ease the updates of the unfortunately
+%	  quite frequent changes in the ABNT and Poli guidelines
+%	- adaptation and update of some environments and packages (abnTex2, etc)
+%	- rename the class file to epusp_1.0.0.cls and restart the versioning
+%	  according with specific rules for further changes (see the main class
+%	  file for details)
+%	- I performed many updates and changes over the whole class and the main 
+%	  file before I realise there should be a new class file and that is the
+%	  only reason I do not show more detailed information about every single change.
+%	  I decided to start an almost fresh version and provide an easier way for 
+%	  updating and contributions from the community
+%
+% Added in version ?

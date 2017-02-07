@@ -1,0 +1,293 @@
+% -----------------------------------------------------------------------------
+% preamble.tex
+%
+% definitions of
+%	- page numbering squeme
+%	- automatically include in TOC bibliography, index and stared chapters
+%	- style of page numbers in TOC
+%	- figures and tables independent of sections?
+%	- option: page headers
+%	- option 'capchap', 'capsec'
+%	- option 'anapmaiusc' and 'anapnormal'
+%	- option 'anapindentindic' in order to \anexo or \apendice make ABNT
+%	- line spacing options: change current setting
+%	- option: loading common packages NO LONGER SUPPORTED!!!
+%	- auto bold math: bold math version ir text font is in bold face
+%	- font option: times as default or not
+%	- option to indent the first paragraph of each section or chapter
+%	- passing of other options not defined to report
+%	- testing other font size options
+% 	- process options (without star -> in the order of definition!)
+% 	- load base class using current setting for basic options
+% 	- figure counter
+% -----------------------------------------------------------------------------
+
+
+% ifthen - conditions in LaTeX
+\RequirePackage{ifthen}
+
+% calc - standard package for length and number easy calculations
+\RequirePackage{calc}
+
+% multicol - better multicolunms
+\RequirePackage{multicol}
+
+
+
+%%%%%%%%%%%%%      OPTION DECLARATION      %%%%%%%%%%%%
+
+% page numbering squeme
+% ---------------------
+
+\providecommand{\ABNTpnum}{}
+\DeclareOption{pnumabnt}       {\renewcommand{\ABNTpnum}{ABNT}}
+\DeclareOption{pnumplain}      {\renewcommand{\ABNTpnum}{plain}}
+\DeclareOption{pnumromarab} {\renewcommand{\ABNTpnum}{RomSumArab}}
+\ExecuteOptions{pnumabnt}
+
+
+% automatically include in TOC bibliography, index and stared chapters
+% --------------------------------------------------------------------
+
+\newboolean{ABNTincludeintoc}
+\DeclareOption{sumariocompleto}   {\setboolean{ABNTincludeintoc}{true}}
+\DeclareOption{sumarioincompleto} {\setboolean{ABNTincludeintoc}{false}}
+\ExecuteOptions{sumariocompleto}
+
+
+% style of page numbers in TOC
+% ----------------------------
+
+\newboolean{ABNTpagenumstyle}
+\DeclareOption{abnttoc}   {\setboolean{ABNTpagenumstyle}{true}}
+\DeclareOption{normaltoc} {\setboolean{ABNTpagenumstyle}{false}}
+\ExecuteOptions{abnttoc}
+
+
+% figures and tables independent of sections?
+% -------------------------------------------
+
+\newboolean{ABNTfigtabnumbers}
+\DeclareOption{abntfigtabnum}{\setboolean{ABNTfigtabnumbers}{true}}
+\DeclareOption{normalfigtabnum}{\setboolean{ABNTfigtabnumbers}{false}}
+\ExecuteOptions{abntfigtabnum}
+
+
+% option: page headers
+% --------------------
+
+\newboolean{ABNTheader}
+\providecommand{\ABNTheadertype}{\relax}
+\DeclareOption{noheader}    {\setboolean{ABNTheader}{false}}
+\DeclareOption{header}      {\setboolean{ABNTheader}{true}
+                             \renewcommand{\ABNTheadertype}{normal}}
+\DeclareOption{plainheader} {\setboolean{ABNTheader}{true}
+                             \renewcommand{\ABNTheadertype}{plain}}
+\DeclareOption{ruledheader} {\setboolean{ABNTheader}{true}
+                             \renewcommand{\ABNTheadertype}{ruled}}
+\ExecuteOptions{plainheader}
+
+
+% option 'capchap', 'capsec'
+% --------------------------
+
+% titles of chapters or sections in capital letters 
+
+\newboolean{ABNTcapchap}
+\setboolean{ABNTcapchap}{false}
+\newboolean{ABNTcapsec}
+\setboolean{ABNTcapsec}{false}
+
+\DeclareOption{capchap}{\setboolean{ABNTcapchap}{true}
+                        \setboolean{ABNTCapAnnexAppendix}{true}}
+\DeclareOption{capsec}{\setboolean{ABNTcapsec}{true}}
+
+
+% option 'anapmaiusc' and 'anapnormal'
+% ------------------------------------
+
+% should \annexname and \appendixname be on capital letters?
+
+\newboolean{ABNTCapAnnexAppendix}
+\setboolean{ABNTCapAnnexAppendix}{true}  % manual execution of option for
+                                         % cooperation between `capchap'
+                                         % and `anexapendnormal'
+
+\DeclareOption{anapmaiusc}{\setboolean{ABNTCapAnnexAppendix}{true}}
+\DeclareOption{anapnormal}{\setboolean{ABNTCapAnnexAppendix}{false}}
+
+
+% option 'anapindentindic' in order to \anexo or \apendice make ABNT
+% ------------------------------------------------------------------
+
+% strict indentation on its titles.
+
+\newboolean{ABNTAnApIndicativoIndent}
+
+\DeclareOption{anapindicindent}{\setboolean{ABNTAnApIndicativoIndent}{true}}
+\DeclareOption{anapcustomindent}{\setboolean{ABNTAnApIndicativoIndent}{false}}
+
+\ExecuteOptions{anapindicindent}
+
+\newboolean{ABNTAnApName}
+\DeclareOption{anapname}{\setboolean{ABNTAnApName}{true}}
+\DeclareOption{anapnoname}{\setboolean{ABNTAnApName}{false}}
+
+\ExecuteOptions{anapname}
+
+
+% line spacing options: change current setting
+% --------------------------------------------
+
+\newcommand*{\ABNTespacodefault}{} %
+\DeclareOption{espacoumemeio} {\renewcommand*{\ABNTespacodefault}%
+                                  {\taxaespacoumemeio}} % default
+\DeclareOption{espacosimples} {\renewcommand*{\ABNTespacodefault}%
+                                  {\taxaespacosimples}}
+\DeclareOption{espacoduplo}   {\renewcommand*{\ABNTespacodefault}%
+                                  {\taxaespacoduplo}}
+\ExecuteOptions{espacoumemeio}
+
+%% Margin care --> Removed since version 1 beta
+
+%% Options `spacednotes': removed since version 0.3
+%  Assuming notes single spaced always (no alternative if using setspace ;-D
+
+
+% option: loading common packages NO LONGER SUPPORTED!!!
+% ------------------------------------------------------
+
+\newboolean{ABNTcommonpack}
+\DeclareOption{paccomuns}    {\setboolean{ABNTcommonpack}{true}}
+\DeclareOption{sempaccomuns} {\setboolean{ABNTcommonpack}{false}}
+\ExecuteOptions{sempaccomuns}
+
+
+% auto bold math: bold math version ir text font is in bold face
+% --------------------------------------------------------------
+
+\newboolean{ABNTautobm}
+\DeclareOption{autobm}   {\setboolean{ABNTautobm}{true}}
+\DeclareOption{noautobm} {\setboolean{ABNTautobm}{false}}
+\ExecuteOptions{autobm}
+
+
+% font option: times as default or not
+% ------------------------------------
+
+\newboolean{ABNTtimesfont}
+\DeclareOption{times}   {\setboolean{ABNTtimesfont}{true}}
+\DeclareOption{notimes} {\setboolean{ABNTtimesfont}{false}}
+\ExecuteOptions{notimes}
+
+
+% option to indent the first paragraph of each section or chapter
+% ---------------------------------------------------------------
+
+\newboolean{ABNTindentfirst}
+\DeclareOption{indentfirst}   {\setboolean{ABNTindentfirst}{true}}
+\DeclareOption{noindentfirst} {\setboolean{ABNTindentfirst}{false}}
+\ExecuteOptions{indentfirst}
+
+\newboolean{ABNTdraft}
+\DeclareOption{draft}   {\setboolean{ABNTdraft}{true}}
+\DeclareOption{nodraft}   {\setboolean{ABNTdraft}{false}}
+\ExecuteOptions{nodraft}
+
+\def\ABNTcurrentoptions{}
+\newcommand{\AddCurrentOptionToList}{%
+  \ifx\ABNTcurrentoptions\@empty%
+     \edef\ABNTcurrentoptions{\CurrentOption}%
+  \else%
+     \edef\ABNTcurrentoptions{\ABNTcurrentoptions,\CurrentOption}%
+  \fi%
+}
+
+
+% all options not defined are passed to 'report'
+% ----------------------------------------------
+
+\DeclareOption*{%
+  \AddCurrentOptionToList
+% if some font or paper option is passed, a flag is set.
+  \ifthenelse{\equal{\CurrentOption}{10pt}\or\equal{\CurrentOption}{11pt}}%
+    {\setboolean{ABNTfontsize}{true}}{}%
+  \ifthenelse{\equal{\CurrentOption}{a5paper}\or%
+              \equal{\CurrentOption}{b5paper}\or%
+              \equal{\CurrentOption}{letterpaper}}%
+    {\setboolean{ABNTpaper}{true}}{}%
+  \ifthenelse{\equal{\CurrentOption}{openany}}%
+    {\setboolean{ABNTopen}{true}}{}%
+  \PassOptionsToClass{\CurrentOption}{report}}
+
+
+% testing if user use other options for font size or paper
+% than 12pt, a4paper and openright
+\newboolean{ABNTfontsize}
+\setboolean{ABNTfontsize}{false}
+\newboolean{ABNTpaper}
+\setboolean{ABNTpaper}{false}
+\newboolean{ABNTopen}
+\setboolean{ABNTopen}{false}
+
+
+% process options (without star -> in the order of definition!)
+% -------------------------------------------------------------
+
+\ProcessOptions
+
+% After process options, flags are properly set.
+% Passing options to class, that will be loaded in \LoadClass
+\ifthenelse{\boolean{ABNTfontsize}}%
+  {}{\PassOptionsToClass{12pt}{report}}
+\ifthenelse{\boolean{ABNTpaper}}%
+  {}{\PassOptionsToClass{a4paper}{report}}
+\ifthenelse{\boolean{ABNTopen}}%
+  {}{\PassOptionsToClass{openright}{report}}
+
+
+% figure counter
+% --------------
+
+%%%%%%%%% Lying to report :-)         ->  working
+%%
+%% Report says:  \newcounter{figure}[chapter], \newcounter{table}[chapter]
+%% But this is not ABNT (figure counter should not reset to 1 if chapter
+%% increments). There is no straight forward way to "\renewcounter" 
+%% then. So I have to make an work around.
+%%
+%% Idea: redefine \newcounter s.t. id newcounter is figure or table, then do
+%% what I want (do not include [chapter] in the command). Otherwise, do
+%% normal \newcounter.
+%%
+%% Advantage of this: some package may suppose that the counters of figure
+%% and table are actually figure and table, and not ABNTfigure, ABNTtable,
+%% as in previous versions
+
+\ifthenelse{\boolean{ABNTfigtabnumbers}}
+ {
+   % saving old \newcounter
+   \let\ABNToldnewcounter\newcounter\relax
+   \def\ABNTeatbrackets[#1]{\relax}
+   \renewcommand{\newcounter}[1]%
+     {\ifthenelse{\equal{#1}{figure}\or\equal{#1}{table}}%
+        {\ABNToldnewcounter{#1}\@ifnextchar[{\ABNTeatbrackets}{}}%
+        {\ABNToldnewcounter{#1}}%
+     }
+ }
+ {}
+
+
+% load base class using current setting for basic options
+% -------------------------------------------------------
+
+\LoadClass{report}
+
+\ifthenelse{\boolean{ABNTfigtabnumbers}}
+ {
+  %% undoing redefinition of \newcounter and fixing \the(counters)
+  \let\newcounter\ABNToldnewcounter\relax
+  \renewcommand{\thefigure}{\arabic{figure}}
+  \renewcommand{\thetable}{\arabic{table}}
+ }
+ {}

@@ -1,0 +1,168 @@
+% -----------------------------------------------------------------------------
+% pre_text.tex
+%
+% Pre-textual elements in cover and back cover
+% 	- \ABNTinstituicaodata
+% 	- \ABNTautordata
+% 	- \ABNTorientadordata
+% 	- \ABNTorientadorname
+% 	- \ABNTcoorientadordata
+% 	- \ABNTcoorientadorname
+% 	- \ABNTtitulodata
+% 	- \tituloformat
+% 	- \ABNTcomentariodata
+% 	- \ABNTareaconcdata
+% 	- \ABNTareaconcname
+% 	- \ABNTlocaldata
+% 	- \ABNTdedicatoriadata
+% 	- \ABNTifnotempty
+% -----------------------------------------------------------------------------
+
+%\newcommand{\fcformat}{\bfseries\textsf}
+\newcommand{\fcformat}{\textsf}
+
+\providecommand{\ABNTinstituicaodata}{}
+\newcommand{\instituicao}[1]{\renewcommand{\ABNTinstituicaodata}{#1}}
+\newcommand{\instituicaoformat}{\scshape}
+
+\providecommand{\ABNTautordata}{}
+\newcommand{\autor}[1]{\renewcommand{\ABNTautordata}{#1}}
+\newcommand{\autorformat}{\ABNTsectionfont} %\large
+						
+\providecommand{\ABNTorientadordata}{}
+\providecommand{\ABNTorientadorname}{}
+\newcommand{\orientador}[2][\advisorTitle:\vspace{1mm}\\]%
+  {\renewcommand{\ABNTorientadorname}{#1}%
+   \renewcommand{\ABNTorientadordata}{#2}}
+\newcommand{\orientadornameformat}{}
+\newcommand{\orientadorformat}{}
+
+\providecommand{\ABNTcoorientadordata}{}
+\providecommand{\ABNTcoorientadorname}{}
+\newcommand{\coorientador}[2][\coadvisorTitle:\vspace{1mm}\\]%
+  {\renewcommand{\ABNTcoorientadorname}{#1}%
+   \renewcommand{\ABNTcoorientadordata}{#2}}
+\newcommand{\coorientadornameformat}{}
+\newcommand{\coorientadorformat}{}
+
+\providecommand{\ABNTtitulodata}{}
+\providecommand{\ABNTuppercasetitulodata}{}
+\newcommand{\titulo}[1]{
+\renewcommand{\ABNTtitulodata}{#1}
+\renewcommand{\ABNTuppercasetitulodata}{\uppercase{#1}}
+}
+\newcommand{\tituloformat}{\ABNTtitulosize\ABNTchapterfont}
+
+\providecommand{\ABNTcomentariodata}{}
+\newcommand{\comentario}[1]{\renewcommand{\ABNTcomentariodata}{#1}}
+\newcommand{\comentarioformat}{}
+
+\providecommand{\ABNTareaconcdata}{}
+\providecommand{\ABNTareaconcname}{}
+\newcommand{\areaConcentracao}[2][\concentrationField:\vspace{1mm}\\]%
+  {\renewcommand{\ABNTareaconcname}{#1}%
+   \renewcommand{\ABNTareaconcdata}{#2}}
+\newcommand{\areaconcnameformat}{}
+\newcommand{\areaconcformat}{}
+
+\providecommand{\ABNTlocaldata}{}
+\newcommand{\local}[1]{\renewcommand{\ABNTlocaldata}{#1}}
+\newcommand{\localformat}{}
+
+\providecommand{\ABNTdatadata}{}
+\newcommand{\data}[1]{\renewcommand{\ABNTdatadata}{#1}}
+\newcommand{\dataformat}{}
+
+\providecommand{\ABNTdedicatoriadata}{}
+\newcommand{\dedicatoria}[1]{\renewcommand{\ABNTdedicatoriadata}{#1}}
+\newcommand{\dedicatoriaformat}{}
+
+\newcommand{\ABNTifnotempty}[2]{\ifthenelse{\not\equal{#1}{}}{#2}{}}
+
+% cover command
+% -------------
+
+\newcommand{\capa}{%
+%  \hypersetup{pdftitle=\ABNTtitulodata,pdfauthor=\ABNTautordata}
+\vspace*{-\authorM} % to leave author 3cm from top
+  \begin{center} 
+    \espaco{\taxaespacoumemeio} 
+    {\autorformat \ABNTautordata} \\[\authorTOtitle]
+    {\tituloformat \ABNTtitulodata} % use \ABNTuppercasetitulodata for upper case
+
+    % minipage comments
+    \vspace{\minipTopM}
+    \hspace{\minipP\textwidth} % posicionando a minipage 
+    \begin{minipage}{\minipW\textwidth} 
+      \begin{espacoumemeio} 
+        \begin{sloppypar}
+          {\comentarioformat
+           \ABNTcomentariodata\\[\dateCoverOffset]
+          }
+        \end{sloppypar}
+      \end{espacoumemeio} 
+    \end{minipage} 
+
+    % local and date
+    %\vspace*{\stretch{1}}
+	\vspace*{\minipBottomM}
+    \begin{espacosimples} 
+      {\localformat\ABNTlocaldata}\\
+      {\dataformat\ABNTdatadata}
+    \end{espacosimples}
+    \if@openright\cleardoublepage\else\clearpage\fi%
+  \end{center} 
+}% end of \capa
+
+
+% back cover command
+% ------------------
+
+\newcommand{\folhaderosto}{%
+\vspace*{-\authorM} % to leave author 3cm from top
+  \begin{center} 
+    \espaco{\taxaespacoumemeio}
+    {\autorformat \ABNTautordata} \\[\authorTOtitle] 
+    {\tituloformat \ABNTtitulodata} % use \ABNTuppercasetitulodata for upper case
+
+    \vspace{\minipTopM}
+    \hspace{\minipP\textwidth}
+    \begin{minipage}{\minipW\textwidth} 
+      \begin{espacoumemeio} 
+        \begin{sloppypar}
+          { \comentarioformat
+            \ABNTcomentariodata\\[\minipParaSpcB]
+          }
+        \end{sloppypar}
+
+        \ABNTifnotempty{\ABNTareaconcdata}%
+          {%
+            %\vspace{.8cm}
+            {\areaconcnameformat\ABNTareaconcname}
+            {\areaconcformat\ABNTareaconcdata}\par%\protect\\
+          }
+				\ABNTifnotempty{\ABNTorientadordata}%
+				    {%
+	            \vspace{\minipParaSpcA}
+				      {\orientadornameformat\ABNTorientadorname}
+				      {\orientadorformat\ABNTorientadordata}\protect\\
+				    }
+				\ABNTifnotempty{\ABNTcoorientadordata}
+					  {%
+	            \vspace{\minipParaSpcA}
+					    {\coorientadornameformat\ABNTcoorientadorname}
+					    {\coorientadorformat\ABNTcoorientadordata}
+					  }
+      \end{espacoumemeio} 
+    \end{minipage} 
+
+    % local and date
+    %\vspace*{\stretch{1}}
+    \vspace*{\dateBCoverOffset}
+    \begin{espacosimples} 
+      {\localformat\ABNTlocaldata}\\
+      {\dataformat\ABNTdatadata}
+    \end{espacosimples} 
+    \clearpage
+  \end{center} 
+}% end of folhaderosto

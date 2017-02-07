@@ -1,0 +1,149 @@
+% -----------------------------------------------------------------------------
+% commands.tex
+%
+% commands and environment definitions
+%	- Author formatting
+%	- Dedication page
+%	- Acknowledgement environment
+%	- Abstract
+%	- Resumo
+%	- Font choice
+%	- auto bold math
+%	- subsection counters limits
+% -----------------------------------------------------------------------------
+
+% Author formatting
+% -----------------
+
+\newcommand{\autorPoli}[5]{%
+  \autor{\uppercase{{#1 #4 #5}}}%
+  \renewcommand{\PoliAutorFichaCatalografica}{{#5, #1 #3}}%
+  \renewcommand{\PoliAutorIniciaisMaisSobrenome}{{#2 #4 #5}}%
+}
+
+\newcommand{\PoliDepartamentoData}{}
+\newcommand{\departamento}[1]{\renewcommand{\PoliDepartamentoData}{#1}}
+\newcommand{\departamentoformat}{}
+
+\newcommand{\PoliTipoDocData}{}
+
+
+% Dedication page
+% ---------------
+
+\newcommand{\paginadedicatoria}
+{%
+\begin{titlepage}
+	\espaco{1.1}
+	\vfill\vfill\vfill
+	\vspace{6cm}
+	\ABNTifnotempty{\ABNTdedicatoriadata}%
+	{%
+		\hspace{.47\textwidth}
+	    \begin{minipage}{.5\textwidth}
+	       \begin{espacosimples}
+	         \vspace{20cm}
+	         {\comentarioformat\ABNTdedicatoriadata}\protect\\\par
+	       \end{espacosimples}
+	     \end{minipage}
+	   }%
+	\vspace{.8cm}
+	\vfill\vfill\vfill
+	\end{titlepage}
+}
+
+
+% Acknowledgement environment
+% ---------------------------
+
+\newenvironment{acknowledgement}%
+{%
+	\if@openright\cleardoublepage\else\clearpage\fi%
+	\otherheadtrue\pretextualchapter{\ABNTagradecimentosname}%
+	\begin{espacoumemeio}%
+}%
+{\end{espacoumemeio}\newpage}%agradecimentos
+
+
+% Abstract
+% --------
+
+\renewenvironment{abstract}%
+{%
+	\if@openright\cleardoublepage\else\clearpage\fi%
+   	\otherheadtrue\pretextualchapter{\ABNTabstractname}%
+   	\begin{espacoumemeio}%
+%   \fcformat\PoliAutorIniciaisMaisSobrenome. \textbf{\ABNTtitulodata}.
+%   \vspace{1\baselineskip}
+% this data are no longer used! Change here in case you need to put it back
+}%
+{\end{espacoumemeio}\newpage}%abstract
+
+% Resumo
+% ------
+
+\newenvironment{resumo}%
+{%
+	\if@openright\cleardoublepage\else\clearpage\fi%
+   	\otherheadtrue\pretextualchapter{\resumoname}%
+   	\begin{espacoumemeio}%
+}%
+{\end{espacoumemeio}\newpage}%resumo
+  
+  
+% Font choice
+% -----------
+
+\ifthenelse{\boolean{ABNTtimesfont}}% if `times'option enabled...
+ {\IfFileExists{mathptmx.sty}%  try `mathptmx' first
+    {\RequirePackage{mathptmx}}% 
+    {\IfFileExists{mathptm.sty}% if not installed, try `mathptm'
+       {\RequirePackage{mathptm}}%
+       {\IfFileExists{times.sty} % 
+         {\RequirePackage{times}}%
+         {\renewcommand{\rmdefault}{ptm}}%
+       }%
+    }%
+  \IfFileExists{helvet.sty}% including also Helvetica as sans serif.
+    {\RequirePackage{helvet}}%
+    {\IfFileExists{helvetic.sty}%
+       {\RequirePackage{helvetic}}%
+       {\renewcommand{\rmdefault}{phv}}%
+    }%
+ }%
+ {}
+
+
+% auto bold math (try follow bold face in text)
+% ---------------------------------------------
+
+% plan: redefine commands that change font to bold to ALSO change math
+% version; I don't change all commands that change font weight because I
+% suppose this uses are local
+
+\AtBeginDocument{
+\ifthenelse{\boolean{ABNTautobm}\and\not\isundefined{\mv@bold}}%
+ {%
+  % \bfseries
+  \let\ABNToldbfseries\bfseries\relax%
+  \renewcommand{\bfseries}{\mathversion{bold}\ABNToldbfseries}%
+  %
+  % \textbf{}
+  \let\ABNToldtextbf\textbf\relax%
+  \renewcommand{\textbf}[1]{\ABNToldtextbf{\mathversion{bold}#1}}%
+  %
+  % \bf
+  \let\ABNToldbf\bf\relax%
+  \renewcommand{\bf}{\mathversion{bold}\ABNToldbf}%
+  %
+ }%
+ {}%
+}
+
+% check if counters below are actually used!!!
+
+%% Contents shows up to subsubsection. 
+\setcounter{tocdepth}{4}
+
+%% Section number will appear up to \subsubsection
+\setcounter{secnumdepth}{3}

@@ -1,0 +1,28 @@
+%   Licence: LPPL (LaTeX Project Public License)
+%     You can change this file in the terms of LPPL
+%     (http://www.latex-project.org/lppl.html)
+% 
+%   Licenca: LPPL (LaTeX Project Public License)
+%     Esta licenca diz basicamente que se voce editar o codigo desta
+%     classe, mesmo localmente (no seu micro), voce DEVE RENOMEAR o arquivo
+%     da classe!! Como sempre, nao eh dada nenhuma garantia.
+%     Para o texto completo da licenca, favor seguir o endereco
+%        http://www.latex-project.org/lppl.html
+%
+%   Classe para confeccao de monografias, dissertacoes ou teses
+%   de acordo com as normas da Associacao Brasileira de Normas
+%   Tecnicas (ABNT). Esta classe, junto com o estilo bibTeX, foram
+%   desenvolvidos no grupo de trabalho abnTeX (ABsurd Norms for TeX :-)
+%   (http://www.abntex.net.br/) 
+%
+%   Class to make theses or monographies following norms defined by
+%   Brazilian Association for Tecnical Norms. This class is developed
+%   by abnTeX group (http://www.abntex.net.br/), together with two
+%   bibTeX styles.
+%
+%   Author (class): Miguel Vinicius Santini Frasson
+%
+%   Author of adaptations to the particular rules of the Escola Politécnica, University 
+%   of São Paulo: Paulo Barreto (original version: 2003)
+%
+%   Author of adaptations and updates to the Paulo Barreto's file: Fabio Barbieri (2017)

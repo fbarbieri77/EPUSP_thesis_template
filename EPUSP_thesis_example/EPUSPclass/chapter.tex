@@ -1,0 +1,482 @@
+% -----------------------------------------------------------------------------
+% chapter.tex
+% 
+% chapter environment definitions and formatting
+% -----------------------------------------------------------------------------
+
+% old comments for further revision
+% ----------------------------------
+
+%    Chapter and section: titles, page numbering, etc
+%        This is a very delicated part. Let's give a flavour of what
+%        happened. See comments in implementation for details.
+%      redefining \chapter
+%        - tests for determine begin of textual part and make changes at this
+%          event.
+%        - \pretextualchapter: a started chapter in the pre-textual part
+%        - ProximoForaDoSumario -> switches off \ABNTaddcontentsline.
+%        - Marks: care is they are inserted by default or not.
+%        - redefinig \@schapter: now \chapter* is almost equal to \chapter,
+%          appart from the title display. It also includes an entry in TOC.
+%        - \@part and \@spart redefined: font purposes.
+%        - defined \ABNTstartsection: stared section with centralized titles
+%           and inclusion in TOC.
+%        - new \@dottedtoline for compleance with NBR 6027-1989
+%        - \@makechapterhead and \@makeschapterheadredefined to fit
+%          norms. Paying attention to capchap and fonts.
+%        - redefined all \section like commands (apply last redefinitions
+%          and font purposes)
+%        - \anexo and \apendice -> apply old \appendix changes and
+%          replaces \@chapter by \@anapchapter. 
+% Redefining \chapter and \part. The changes are
+%  - \chapteritlepagestyle instead of explict plain page style
+%  - \ABNTchaptermark instead of \chaptermark (must be before
+%       \addcontentsline !!!) 
+% - several commands were replaced by abntversions due to nuances of the
+%   norms :-( it can create several uncompatibilities with packages that
+%   change explictily these important commands, although I have tried very
+%   hard to make as less damage on compatibility as possible. As a result
+%   of this, package hyperref is totally broken with abnt.cls.
+%
+% What is going on here?
+%   
+%  This class supports auto include in toc for both \chapter* and
+%  \section* (and similars). As we know, the command \chapter admits an
+%  optional argument, which goes to the toc and the marks, if it's present
+%  (otherwise the main parameter of \chapter is used in toc and marks also.)
+%  
+%  To allow exactly the same mechanism for \chapter and \chapter*, \section
+%  and \section*, \subsection and \subsection*, etc, I had to define
+%  similar commands to some important core commands in LaTeX, like \secdef
+%  (we make a new one to avoid conflicts with other packages) and
+%  \@startsection (I make a new one too).
+%
+%  Now, \ABNTstartsection, appart from make the stared version of a
+%  section-like command to include the title in toc (if a boolean is set to
+%  true), the title is centered for stared form.
+%
+%  Now, \chapter* and \part* are almost equal to \chapter and \part
+%
+%  The origin of this material are the files 
+%     $texmfDIR/tex/latex/base/latex.ltx  (codigo fonte do LaTeX)
+%     $texmfDIR/tex/latex/base/report.cls (classe standard)
+
+% From the definition of \secdef -> stared version now admits optional
+% param (after bug with hyperref, it was no longer used.)
+\def\ABNTsecdef#1#2{\@ifstar{\@dblarg{#2}}{\@dblarg{#1}}}
+
+% Changed explicit \thispagestyle{empty}
+\renewcommand\chapter%
+    {%
+     \if@openright\cleardoublepage\else\clearpage\fi%
+     \thispagestyle{\chaptertitlepagestyle}
+     \ifthenelse{\boolean{ABNTinpretext}}%
+       {%
+        \ifthenelse{\boolean{ABNTaftertoc}}%
+          {% change to textual part
+           \setboolean{ABNTinpretext}{false}%
+           \ABNTBeginOfTextualPart%
+          }%
+          {}%
+       }% 
+       {}%
+     \global\@topnum\z@%
+     \@afterindentfalse%
+%     \ABNTsecdef\@chapter\@schapter%
+     \secdef\@chapter\@schapter%
+    }%
+
+% To make tre-textual chapters (that fits page numbering squeme...)
+% this is equal to \chapter*{}, but ignores in witch part is it. It does
+% not change any tags.
+\newcommand\pretextualchapter%
+    {%
+     \if@openright\cleardoublepage\else\clearpage\fi%
+     \thispagestyle{\chaptertitlepagestyle}
+     \global\@topnum\z@%
+     \@afterindentfalse%
+     \@schapter%
+    }%
+
+% Created useful \resetsubcounters from the code of \stepcounter.
+\newcommand{\resetsubcounters}[1]{%
+  \begingroup
+    \let\@elt\@stpelt
+    \csname cl@#1\endcsname
+  \endgroup}
+
+%% \ProximoForaDoSumario -> taking out some chapter or section from toc.
+
+\newboolean{ABNTNextOutOfTOC}
+\setboolean{ABNTNextOutOfTOC}{false}
+
+%% \ProximoForaDoSumario[mark text]
+% Now \ProximoForaDoSumario (re)sets the marks too. If one still want the
+% marks, he/she must use it as the optional parameter of this command.
+
+\newcommand{\ABNTnextmark}{}
+\newcommand{\ProximoForaDoSumario}[1][]
+  {
+   \setboolean{ABNTNextOutOfTOC}{true}
+   \renewcommand{\ABNTnextmark}{#1}
+  }
+
+
+\let\ABNToldaddcontentsline\addcontentsline\relax
+\newcommand{\ABNTaddcontentsline}[3]%
+  {\ifthenelse{\boolean{ABNTNextOutOfTOC}}
+     {\setboolean{ABNTNextOutOfTOC}{false}}
+     {\ifthenelse{\boolean{ABNThypertoc}}%
+     {\addtocontents{#1}{\protect\contentsline{#2}{#3}{\thepage}{#2.\csname the#2\endcsname}}}%
+     {\ABNToldaddcontentsline{#1}{#2}{#3}}%
+     }}
+
+\newcommand{\ABNTchaptermark}[1]
+  {%
+   \ifthenelse{\boolean{ABNTNextOutOfTOC}}
+     {\markboth{\ABNTnextmark}{\ABNTnextmark}}
+     {\chaptermark{#1}}%
+  }
+
+\newcommand{\ABNTsectionmark}[1]
+  {%
+   \ifthenelse{\boolean{ABNTNextOutOfTOC}}
+     {\markright{\ABNTnextmark}}
+     {\sectionmark{#1}}%
+  }
+
+
+
+
+% \@chapter : 
+\def\@chapter[#1]#2%
+      {\ABNTchaptermark{#1}% This command MUST came before addcontentsline
+       \ifnum \c@secnumdepth >\m@ne
+         \refstepcounter{chapter}%
+         \typeout{\@chapapp\space\thechapter.}%
+         \ifthenelse{\boolean{ABNTaftertoc}}
+           {\ABNTaddcontentsline{toc}{chapter}%
+                   {\protect\numberline{\thechapter}#1}}
+           {}
+       \else
+         \ifthenelse{\boolean{ABNTaftertoc}}%
+           {\ABNTaddcontentsline{toc}{chapter}{#1}}%
+           {}%
+       \fi       
+       \if@twocolumn
+         \@topnewpage[\@makechapterhead{#2}]%
+       \else
+         \@makechapterhead{#2}%
+         \@afterheading
+       \fi\par}
+
+%% From the \@chapter code. Now \@schapter does almost the same as
+%% \@chapter. Added \resetsubcounters.
+\def\@schapter#1{%
+      \if@twocolumn
+        \@topnewpage[\@makeschapterhead{#1}]
+      \else
+        \@makeschapterhead{#1}
+        \@afterheading
+      \fi
+      \@mkboth{#1}{#1}  % <-- inserted (must be before addcontentsline)
+      \ifthenelse{\boolean{ABNTincludeintoc}}%
+        {%
+         \ifthenelse{\boolean{ABNTaftertoc}}
+           {\ABNTaddcontentsline{toc}{chapter}{#1}}
+           {}
+        }%
+        {}
+      \resetsubcounters{chapter}\par
+    }%
+
+% Fonts in \@part and \@part* changed. Some \resetsubcounters added.
+\def\@part[#1]#2{%
+    \ifnum \c@secnumdepth >-2\relax
+      \refstepcounter{part}%
+      \ABNTaddcontentsline{toc}{part}{\protect\numberline{\thepart}#1}%
+    \else
+      \resetsubcounters{part}
+      \ABNTaddcontentsline{toc}{part}{#1}%
+    \fi
+    \markboth{}{}%
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \ifnum \c@secnumdepth >-2\relax
+       \ABNTchapterfont\ABNTchaptersize\ifthenelse{\boolean{ABNTcapchap}}%
+          {\MakeUppercase{\partname~\thepart}}%
+          {\partname~\thepart} %\partname~\thepart% Paulo Barreto
+       \par
+       \vskip 20\p@
+     \fi
+     \ABNTchapterfont\ABNTcapchapsize\ifthenelse{\boolean{ABNTcapchap}}%
+          {\MakeUppercase{#2}}%
+          {#2}\par}%
+    \@endpart}
+
+\def\@spart#1{%
+    \ABNTaddcontentsline{toc}{part}{#1}%    
+    \markboth{}{}%
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \ABNTchapterfont\ABNTcapchapsize\ifthenelse{\boolean{ABNTcapchap}}%
+          {\MakeUppercase{#1}}%
+          {#1}\par}%
+    \@endpart}
+
+
+% From \@startsection. The only difference is that it calls \@ssect
+% changing the meaning id the first parameter. Now, instead of indentation,
+% it gives section level for TOC purposes.
+\def\ABNTstartsection#1#2#3#4#5#6{%
+  \if@noskipsec \leavevmode \fi
+  \par
+  \@tempskipa #4\relax
+  \@afterindenttrue
+  \ifdim \@tempskipa <\z@
+    \@tempskipa -\@tempskipa \@afterindentfalse
+  \fi
+  \if@nobreak
+    \everypar{}%
+  \else
+    \addpenalty\@secpenalty\addvspace\@tempskipa
+  \fi
+  \@ifstar
+    {\ABNTssect{#1}{#4}{#5}{#6}}% #3 replaced by #1 here
+    {\@dblarg{\ABNTsect{#1}{#2}{#3}{#4}{#5}{#6}}}}
+
+% I change the meaning of the first paramenter here. Instead of an indent
+% skip, it is now the name of the section, for `toc' purposes.
+\def\ABNTssect#1#2#3#4#5{%
+  \@tempskipa #3\relax
+  \ifdim \@tempskipa>\z@
+    \begingroup
+      #4{%
+         \interlinepenalty \@M \centering
+         \ifthenelse{\boolean{ABNTcapsec}}
+             {\MakeUppercase{#5}}{#5}\@@par}%
+    \endgroup
+    \@ifundefined{ABNT#1mark}{}{\csname ABNT#1mark\endcsname{#5}}
+    \ifthenelse{\boolean{ABNTincludeintoc}}
+      {\ABNTaddcontentsline{toc}{#1}{#5}}
+     {}
+  \else
+    \def\@svsechd{#4{#5}%
+      \@ifundefined{ABNT#1mark}{}{\csname ABNT#1mark\endcsname{#5}}
+      \ifthenelse{\boolean{ABNTincludeintoc}}%
+         {\ABNTaddcontentsline{toc}{#1}{#5}}{}
+    }%
+  \fi
+  \@xsect{#3}}
+
+\def\ABNTsect#1#2#3#4#5#6[#7]#8{%
+  \ifnum #2>\c@secnumdepth
+    \let\@svsec\@empty
+  \else
+    \refstepcounter{#1}%
+    \protected@edef\@svsec{\@seccntformat{#1}\relax}%
+  \fi
+  \@tempskipa #5\relax
+  \ifdim \@tempskipa>\z@
+    \begingroup
+      #6{%
+        \@hangfrom{\hskip #3\relax\@svsec}%
+          \interlinepenalty \@M
+          \ifthenelse{\boolean{ABNTcapsec}}
+             {\MakeUppercase{#8}}{#8}\@@par}%
+    \endgroup
+    \@ifundefined{ABNT#1mark}{}{\csname ABNT#1mark\endcsname{#7}}
+    \ABNTaddcontentsline{toc}{#1}{%
+      \ifnum #2>\c@secnumdepth \else
+        \protect\numberline{\csname the#1\endcsname}%
+      \fi
+      #7}%
+  \else
+    \def\@svsechd{%
+      #6{\hskip #3\relax
+      \@svsec \ifthenelse{\boolean{ABNTcapsec}}
+             {\MakeUppercase{#8}}{#8}}%
+      \@ifundefined{ABNT#1mark}{}{\csname ABNT#1mark\endcsname{#7}}
+      \ABNTaddcontentsline{toc}{#1}{%
+        \ifnum #2>\c@secnumdepth \else
+          \protect\numberline{\csname the#1\endcsname}%
+        \fi
+        #7}}%
+  \fi
+  \@xsect{#5}}
+
+
+% adding style for page numbers required by NBR 6027
+
+\let\old@dottedtocline\@dottedtocline
+\renewcommand{\@dottedtocline}[5]{%
+  \ifthenelse{\boolean{ABNTpagenumstyle}}
+     {%
+      {\renewcommand{\@pnumwidth}{2.5em}%
+       \renewcommand{\@tocrmarg}{3.5em}
+       \old@dottedtocline{#1}{#2}{#3}{#4}%
+             {\ifthenelse{\equal{#5}{}}{}{p.\thinspace#5}}}%
+     }%
+     {\old@dottedtocline{#1}{#2}{#3}{#4}{#5}}%
+}
+
+
+
+%% Font which chapter titles will be printed
+\ifthenelse{\boolean{ABNTcapchap}}
+  {\newcommand{\ABNTchapterfont}{\bfseries\upshape}}
+  {\newcommand{\ABNTchapterfont}{\bfseries\itshape}}
+
+\newcommand{\ABNTtocchapterfont}{\ABNTchapterfont\upshape}
+
+%% Font which section titles will be printed
+\newcommand{\ABNTsectionfont}{\bfseries}
+
+%% In order to \MakeUppercase do not apply to math mode in chapter or
+%% section titles, package textcase used
+%
+% Sorry, a bug on textcase adds extra space before text. User can fix it by
+% him/herself.
+%
+%\ifthenelse{\boolean{ABNTcapchap}\or\boolean{ABNTcapsec}}
+%  {\IfFileExists{textcase.sty}
+%     {\RequirePackage[overload]{textcase}}
+%     {}
+%  }
+%  {}
+
+\newcommand{\ABNTchaptersize}{\normalsize} %{\Large}
+\newcommand{\ABNTcapchapsize}{\normalsize} %{\Large}
+\newcommand{\ABNTtitulosize}{\Large} %{\Large}
+
+% defining how is typeset the \chapter
+\def\@makechapterhead#1{%
+  {%
+%  \noindent\rule{\textwidth}{1.7pt}\\\par
+  \normalfont\ABNTchaptersize\ABNTchapterfont%
+  \espaco{simples}%
+  \vspace*{\distHeaderChapter}
+  \noindent%
+  \parbox[b]{\textwidth}{%
+    \parbox[t]{4ex}{\thechapter}% espaço entre o número e o título do capitulo
+    \parbox[t]{\textwidth-4ex-1ex}%
+      {\interlinepenalty\@M\raggedright%
+        \ifthenelse{\boolean{ABNTcapchap}}%
+          {\MakeUppercase{#1}}%
+          {#1}
+      }%
+    \vspace*{\distAfterChapter}
+    }\\[0pt]% era 2
+  \vspace{\offsetAfterChapter}
+  }%
+}
+
+\newif\ifotherhead
+\otherheadfalse
+
+% defining how is typeset the \chapter*
+\def\@makeschapterhead#1{%
+\ifotherhead
+  % MUDA O COMPRIMENTO AQUI
+  \vspace*{-1.2cm}\par
+  {\centering\normalfont\ABNTchaptersize\ABNTchapterfont%
+   \ifthenelse{\boolean{ABNTcapchap}}%
+     {\MakeUppercase{#1}}%
+     {#1} 
+    \par}%
+  \vspace{45pt}%
+  \par
+  \otherheadfalse % atribui falso para o boolean otherhead
+\else
+  \vspace*{0pt}\par
+  {\centering\normalfont\ABNTchaptersize\ABNTchapterfont%
+   \ifthenelse{\boolean{ABNTcapchap}}%
+     {\MakeUppercase{#1}}%
+     {#1}
+    \par}%
+  \vspace{45pt}%
+  \par
+\fi
+}
+
+% redefining to apply tocnumpageabnt
+\renewcommand\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 1.0em \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \ifthenelse{\boolean{ABNTpagenumstyle}}
+        {\renewcommand{\@pnumwidth}{3.5em}}
+        {}
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \normalsize\ABNTtocchapterfont
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\hfil \nobreak%
+      \ifthenelse{\boolean{ABNTpagenumstyle}}
+         {%
+          \hb@xt@\@pnumwidth{\hss 
+            \ifthenelse{\not\equal{#2}{}}{{\normalfont p.\thinspace#2}}{}}\par
+         }
+         {%
+          \hb@xt@\@pnumwidth{\hss #2}\par
+         }
+      \penalty\@highpenalty
+    \endgroup
+  \fi}
+
+% redefine to apply style
+\renewcommand\part{%
+  \if@openright\cleardoublepage\else\clearpage\fi%
+  \thispagestyle{\chaptertitlepagestyle}%
+  \if@twocolumn\onecolumn\@tempswatrue\else\@tempswafalse\fi%
+  \null\vfil\secdef\@part\@spart}%
+
+\renewcommand\l@part[2]{%
+  \ifnum \c@tocdepth >-2\relax
+    \addpenalty{-\@highpenalty}%
+    \addvspace{2.25em \@plus\p@}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \noindent{\leavevmode
+       \ABNTtocchapterfont\large\noindent%
+          #1\hfil \hb@xt@\@pnumwidth{\hss #2}}\par
+       \nobreak
+         \global\@nobreaktrue
+         \everypar{\global\@nobreakfalse\everypar{}}%
+    \endgroup
+  \fi}
+
+% formatting spaces for section, subsection, etc
+% ----------------------------------------------
+
+\renewcommand\section{\ABNTstartsection{section}{1}{\z@}%
+                           {-3.5ex \@plus -1ex \@minus -.2ex}%
+                           {2.3ex \@plus.2ex}%
+                           {\espaco{simples}\normalfont%
+                            \ABNTsectionfont\normalsize}}%large
+\renewcommand\subsection{\ABNTstartsection{subsection}{2}{\z@}%
+                           {-3.25ex\@plus -1ex \@minus -.2ex}%
+                           {1.5ex \@plus .2ex}%
+                           {\espaco{simples}\normalfont%
+                            \ABNTsectionfont\normalsize}} %\large
+\renewcommand\subsubsection{\ABNTstartsection{subsubsection}{3}{\z@}%
+                           {-3.25ex\@plus -1ex \@minus -.2ex}%
+                           {1.5ex \@plus .2ex}%
+                           {\espaco{simples}\normalfont%
+                            \ABNTsectionfont\normalsize}}
+\renewcommand\paragraph{\ABNTstartsection{paragraph}{4}{\z@}%
+                           {3.25ex \@plus1ex \@minus.2ex}%
+                           {-1em}%
+                           {\espaco{simples}\normalfont%
+                            \ABNTsectionfont\normalsize}}
+\renewcommand\subparagraph{\ABNTstartsection{subparagraph}{5}{\parindent}%
+                           {3.25ex \@plus1ex \@minus .2ex}%
+                           {-1em}%
+                           {\espaco{simples}\normalfont%
+                            \ABNTsectionfont\normalsize}}

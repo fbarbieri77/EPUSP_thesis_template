@@ -1,0 +1,133 @@
+% -----------------------------------------------------------------------------
+% definitions.tex
+% 
+% This file contains the main formatting definitions
+% You should be able to adjust changes in the ABNT here
+% If you are implementing ABNT changes in this file then, please, update the 
+% version by increasing only its third element: v1.0.X
+% -----------------------------------------------------------------------------
+
+% spacing
+\newcommand*{\taxaespacosimples}{1.0}
+\newcommand*{\taxaespacoumemeio}{1.25}
+\newcommand*{\taxaespacoduplo}{1.5}
+
+% paragraph indentation size and skip
+\newcommand*{\indentationSize}{0.7cm}
+\newcommand*{\indentationSkip}{0.25cm}
+
+% caption separation symbol
+\newcommand{\ABNTcaptionsep}{ - }
+
+% appendix separation symbol (doubled in definition)
+\newcommand{\appSepSym}{-}
+
+% top margin
+\newcommand{\topM}{2.0cm}
+% bottom margin
+\newcommand{\bottomM}{2.0cm}
+% left margin
+\newcommand{\leftM}{3.0cm}
+% right margin
+\newcommand{\rightM}{2.0cm}
+% distance from top of header to top of text
+\newcommand{\headerTOtext}{1.0cm}
+
+% distance between bottom of author and top of title
+\newcommand{\authorTOtitle}{9cm}
+
+% distance offset between page and author
+% wished margin minus the offset 1.7cm
+% for 3cm of margin use 1.3cm = 3cm - 1.7cm
+\newcommand{\authorM}{1.3cm}
+
+% minipage horizontal position
+% the higher value will indent the minipage the more to the left
+\newcommand{\minipP}{0.45}
+
+% minipage width
+\newcommand{\minipW}{0.52}
+
+% minipage top margin
+% the margin already contemplate an offset of 1.3cm,
+% so for a top margin of 3cm use 3cm - 1.3cm = 1.7cm value
+\newcommand{\minipTopM}{1.7cm}
+
+% offset to position the local and date after the minipage
+\newcommand{\minipBottomM}{5.8cm}
+
+% bottom margin offset to adjust date margin in cover
+% in the current configuration the offset
+% value of 1.2cm will leave a margin of 2cm
+% below the date in the cover
+\newcommand{\dateCoverOffset}{1.2cm}
+
+% bottom margin offset to adjust date margin in back cover
+% in the current configuration the offset
+% value of 2.5cm will leave a margin of 2cm
+% below the date in the cover
+\newcommand{\dateBCoverOffset}{2.5cm}
+
+% distance between paragraphs in the minipage
+% adjust the following numbers to obtain a proper distance
+% between paragraphs in the minipage
+\newcommand{\minipParaSpcA}{0.8cm}
+\newcommand{\minipParaSpcB}{0.2cm}
+
+% added space between header and chapter title
+% starts with 1cm
+\newcommand{\distHeaderChapter}{0cm}
+
+% space after the chapter title (this is a necessary offset)
+\newcommand{\distAfterChapter}{1cm}
+\newcommand{\offsetAfterChapter}{-1cm}
+
+% still need to define spaces for \chapter*, \section, \subsection, etc
+% see chapter.tex for further details
+% here it will leave 1cm after a section title, but it is in ex units
+
+% margin before appendix title (in points)
+\newcommand{\appTopMargin}{30pt}
+
+% margin after appendix title (in points)
+\newcommand{\appBottomMargin}{50pt}
+% there are some other margin adjustments in "appendix.tex"
+% however, I did not find the actual effect in the current
+% configuration
+
+% minipage text
+% update text here
+\newcommand{\MiniPageText}[1]{%
+  \renewcommand{\PoliTipoDocData}{Dissertation (Master degree)}
+  \comentario{\vspace{1.0cm}
+	Submitted in partial fulfillment for
+	the degree of Master in Science to
+	the Escola Polit\' ecnica of 
+	Universidade de S\~ ao Paulo.}
+	% use also:
+	% "in #1 to the department of Electrical Engineering of"
+	% if you want to include the concentration and department
+}
+
+% Field titles
+% Acknowledgement, abstract, resumo (mandatory in Portuguese and in a Foreign langague)
+% advisor, co-advisor, etc
+% Change or translate the titles name here
+\newcommand{\ABNTagradecimentosname}{Acknowledgement}
+\newcommand{\ABNTabstractname}{Abstract}
+\newcommand{\resumoname}{Resumo}
+\newcommand{\advisorTitle}{Advisor}
+\newcommand{\coadvisorTitle}{Co-Advisor}
+\newcommand{\concentrationField}{Concentration field}
+\newcommand{\listabbrvname}{List of Abbreviations}
+\newcommand{\listsymbolname}{List of Symbols}
+\newcommand{\listfigName}{List of Figures}
+\newcommand{\listtableName}{List of Tables}
+\newcommand{\refName}{References}
+\newcommand{\appendixName}{Appendix}
+
+
+% deprecated, but left here until I update the proper environment
+\newcommand{\PoliFichaCatalograficaData}{}
+\newcommand{\PoliAutorFichaCatalografica}{}
+\newcommand{\PoliAutorIniciaisMaisSobrenome}{}

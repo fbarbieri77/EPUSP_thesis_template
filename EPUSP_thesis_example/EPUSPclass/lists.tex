@@ -1,0 +1,130 @@
+% -----------------------------------------------------------------------------
+% lists.tex
+%
+% definitions of
+% 	- \tableofcontents
+%	- \listoffigures
+%	- \listoftables
+%	- listofabbrv
+%	- listofsymbols
+%	- flexibility on captions
+% -----------------------------------------------------------------------------
+
+\newboolean{ABNTrestorecol} % new boolean to avoid conflicts
+
+%\newcommand{\upspace}{\vspace{-1.2cm}}
+
+% \tableofcontents
+% ----------------
+
+% do exactly what old \tableofcontents used to do, but had to be redefined
+% since \chapter* (used in \tableofcontents' old definition) was redefined.
+\renewcommand{\tableofcontents}{%
+  \ifthenelse{\boolean{@twocolumn}}%
+    {\setboolean{ABNTrestorecol}{true}\onecolumn}%
+    {\setboolean{ABNTrestorecol}{false}}%
+  \if@openright\cleardoublepage\else\clearpage\fi
+  \thispagestyle{\chaptertitlepagestyle}
+  \global\@topnum\z@
+  \@afterindentfalse
+  \otherheadtrue\@makeschapterhead{\contentsname}%
+  \@afterheading
+  \@mkboth{\contentsname}{\contentsname}
+  \@starttoc{toc}%
+  \ifthenelse{\boolean{ABNTrestorecol}}{\twocolumn}{}%
+  \if@openright\cleardoublepage\else\clearpage\fi%
+  \setboolean{ABNTaftertoc}{true}
+}%
+
+\let\sumario\tableofcontents\relax
+%\newcommand{\sumario}
+%  {\otherheadtrue\pretextualchapter{Sumario}\@starttoc{toc}}
+
+
+% \listoffigures
+% --------------
+
+% In the same spirit of table of contents, it does the same as the old one,
+% but now a test was included due "complete contents" feature.
+\renewcommand{\listoffigures}{%
+  \ifthenelse{\boolean{@twocolumn}}%
+    {\setboolean{ABNTrestorecol}{true}\onecolumn}%
+    {\setboolean{ABNTrestorecol}{false}}%
+  \renewcommand{\listfigurename}{\listfigName}
+  \otherheadtrue\pretextualchapter{\listfigurename}
+  \@starttoc{lof}%
+  \ifthenelse{\boolean{ABNTrestorecol}}{\twocolumn}{}%
+}%
+
+\let\listadefiguras\listoffigures\relax
+
+
+% \listoftables
+% -------------
+
+% Same comments in \listoffigures
+\renewcommand\listoftables{%
+  \ifthenelse{\boolean{@twocolumn}}%
+    {\setboolean{ABNTrestorecol}{true}\onecolumn}%
+    {\setboolean{ABNTrestorecol}{false}}%
+  \otherheadtrue\pretextualchapter{\listtableName}
+  \@starttoc{lot}%
+  \ifthenelse{\boolean{ABNTrestorecol}}{\twocolumn}{}%
+}%
+
+\let\listadetabelas\listoftables\relax
+
+
+% \listofabbrv
+% ------------
+
+\newenvironment{listofabbrv}[1]{
+        \otherheadtrue\pretextualchapter{\listabbrvname}
+        \begin{list}{\textbf{??}}{
+                \settowidth{\labelwidth}{#1}
+                \setlength{\labelsep}{1em}
+                \setlength{\itemindent}{0mm}
+                \setlength{\leftmargin}{\labelwidth}
+                \addtolength{\leftmargin}{\labelsep}
+                \setlength{\rightmargin}{0mm}
+                \setlength{\itemsep}{.1\baselineskip}
+                \renewcommand{\makelabel}[1]{\makebox[\labelwidth][l]{##1}}
+        }
+}{
+        \end{list}
+}
+
+
+% \listofsymbols
+% --------------
+
+\newenvironment{listofsymbols}[1]{
+        \otherheadtrue\pretextualchapter{\listsymbolname}
+        \begin{list}{\textbf{??}}{
+                \settowidth{\labelwidth}{#1}
+                \setlength{\labelsep}{1em}
+                \setlength{\itemindent}{0mm}
+                \setlength{\leftmargin}{\labelwidth}
+                \addtolength{\leftmargin}{\labelsep}
+                \setlength{\rightmargin}{0mm}
+                \setlength{\itemsep}{.1\baselineskip}
+                \renewcommand{\makelabel}[1]{\makebox[\labelwidth][l]{##1}}
+        }
+}{
+        \end{list}
+}
+
+% Flexibility on captions
+% -----------------------
+
+%
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{#1\ABNTcaptionsep #2}%
+  \ifdim \wd\@tempboxa >\hsize
+    #1\ABNTcaptionsep #2\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}

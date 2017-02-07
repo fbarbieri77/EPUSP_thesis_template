@@ -1,0 +1,14 @@
+\select@language {english}
+\contentsline {figure}{\numberline {1}{\ignorespaces Ibovespa index and its weekly average returns.}}{21}{figure.5.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Ibovespa's operation modes distributions.}}{22}{figure.5.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces System's output for all scenarios.}}{28}{figure.5.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces System's output variance for all scenarios.}}{28}{figure.5.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Control policy for scenario A.}}{29}{figure.5.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Control policy for scenario B.}}{30}{figure.5.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Control policy for scenario C.}}{30}{figure.5.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Control policy for scenario D.}}{31}{figure.5.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces System's output for scenario $COMBINED-7$, $beta7$, $nu7$, and base scenario $cc$.}}{34}{figure.5.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces System's output variance for scenario $COMBINED-7$, $beta7$, $nu7$, and base scenario $cc$.}}{34}{figure.5.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Control policy for scenario $COMBINED-7$ versus the base scenario $cc$.}}{35}{figure.5.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces System's output for scenario COMBINED-5,6,7,8,9 and base scenario $cc$.}}{36}{figure.5.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces System's output variance for scenario COMBINED-5, 6, 7, 8, 9 and base scenario $cc$.}}{36}{figure.5.13}

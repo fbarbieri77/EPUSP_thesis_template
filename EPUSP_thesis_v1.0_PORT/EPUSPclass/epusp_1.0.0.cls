@@ -19,11 +19,10 @@
 % This template has been given to you free of charges and it is the combined work
 % of people who could and wanted to help the university community
 %
-% Please, if you have the skills to improve this class, please, do so and share
+% If you have the skills to improve this class, please do so and share
 % it with everybody else.
 %
-% After updating this class, give a brief and precise overview about 
-% the changes you performed in the file "version_log.txt"
+% After updating this class, give a brief and precise overview in the file "version_log.txt" about the changes you performed 
 % When updating, follow the general versioning guidelines found in the file
 % "version_log.txt"
 %

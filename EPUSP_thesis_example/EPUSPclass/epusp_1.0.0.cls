@@ -19,7 +19,7 @@
 % This template has been given to you free of charges and it is the combined work
 % of people who could and wanted to help the university community
 %
-% Please, if you have the skills to improve this class, please, do so and share
+% If you have the skills to improve this class, please, do so and share
 % it with everybody else.
 %
 % After updating this class, give a brief and precise overview about 
@@ -82,11 +82,9 @@
 \input{pre_text}
 \input{commands}
 
-
 % end of epusp class
 % ------------------
 \endinput 
-
 
 %  implementation
 %    setting default spacings

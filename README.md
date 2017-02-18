@@ -1,6 +1,15 @@
 # EPUSP_thesis_template
-Thesis template for Escola Politécnica - USP
+Thesis template for Escola Politécnica - USP.
+I suggest you use this template with TexMaker or TexStudio. You may find the thesis example useful if you are newbie,
+otherwise you will only need either the template in the folder with the English version or Portuguese one.
 
+The document was structured in folders with the class files ("\EPUSPclass"), document files ("\doc"), and figures files ("\figures").
+In order to use it, open and compile the file "\thesis_main.tex".
+Your bibliography data should be input in the file "\doc\bibliography.bib" and then you should compile the bib file "\thesis_main.bbl" with F11 in TexMaker or TexStudio before you compile the main file.
+
+Have fun!
+
+Contents:
 
 EPUSP_thesis_template_v1.0 := folder with template in English
 
